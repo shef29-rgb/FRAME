@@ -1,0 +1,1717 @@
+/* =====================================================
+   FRAME/ — VIDEO EDITOR PORTFOLIO
+   COMIC × CINEMA × EDITORIAL
+===================================================== */
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #111111;
+    color: #f5f0df;
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* ================= VARIABLES ================= */
+
+:root {
+
+    --black: #111111;
+
+    --cream: #f5f0df;
+
+    --yellow: #ffc400;
+
+    --red: #e6392f;
+
+    --blue: #2455ff;
+
+    --white: #ffffff;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    padding: 0 5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(17, 17, 17, 0.94);
+
+    border-bottom:
+        2px solid
+        rgba(245, 240, 223, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 34px;
+
+    letter-spacing: 2px;
+}
+
+
+.logo span {
+
+    color: var(--yellow);
+
+}
+
+
+/* NAVIGATION */
+
+.nav-links {
+
+    display: flex;
+
+    gap: 32px;
+
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--yellow);
+
+    transition: width 0.3s ease;
+
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.menu-btn span {
+
+    display: block;
+
+    width: 28px;
+
+    height: 3px;
+
+    background: var(--cream);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+/* ================= GENERAL SECTION ================= */
+
+.section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        140px 7vw
+        100px;
+
+    border-bottom:
+        3px solid
+        var(--cream);
+
+}
+
+
+.section-number {
+
+    position: absolute;
+
+    top: 40px;
+
+    left: 7vw;
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 18px;
+
+    color: var(--yellow);
+
+    letter-spacing: 2px;
+
+}
+
+
+.small-title {
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        150px 7vw
+        50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-bottom:
+        3px solid
+        var(--cream);
+
+}
+
+
+/* HALFTONE */
+
+.hero-halftone {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 55%;
+
+    height: 100%;
+
+    opacity: 0.18;
+
+    background-image:
+        radial-gradient(
+            var(--cream) 1px,
+            transparent 1px
+        );
+
+    background-size: 9px 9px;
+
+    mask-image:
+        linear-gradient(
+            to left,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 58%;
+
+}
+
+
+/* REC LABEL */
+
+.comic-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 25px;
+
+    background: var(--red);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    border:
+        2px solid
+        var(--cream);
+
+    transform: rotate(-2deg);
+
+}
+
+
+.comic-label span {
+
+    color: white;
+
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size:
+        clamp(
+            70px,
+            9vw,
+            150px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    max-width: 850px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--yellow);
+
+    -webkit-text-stroke:
+        2px
+        var(--cream);
+
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+.btn {
+
+    padding:
+        15px 24px;
+
+    border:
+        2px solid
+        var(--cream);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.btn-primary {
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    border-color: var(--yellow);
+
+}
+
+
+.btn-outline {
+
+    background: transparent;
+
+}
+
+
+/* =====================================================
+   SHOWREEL
+===================================================== */
+
+.showreel-wrapper {
+
+    position: absolute;
+
+    right: 6vw;
+
+    bottom: 90px;
+
+    width: 35%;
+
+    z-index: 3;
+
+}
+
+
+.showreel-tag {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background: var(--blue);
+
+    border:
+        2px solid
+        var(--cream);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transform:
+        translateY(2px)
+        rotate(2deg);
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.showreel-frame {
+
+    position: relative;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border:
+        4px solid
+        var(--cream);
+
+    background: #000;
+
+    box-shadow:
+        12px 12px 0
+        var(--red);
+
+}
+
+
+/* TEMPORARY SHOWREEL IMAGE */
+
+.showreel-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* PLAY BUTTON */
+
+.play-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+
+}
+
+
+.play-button {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    border:
+        3px solid
+        var(--black);
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    padding-left: 4px;
+
+}
+
+
+/* SHOWREEL LABEL */
+
+.video-time {
+
+    position: absolute;
+
+    bottom: 10px;
+
+    right: 12px;
+
+    padding: 5px 8px;
+
+    background: var(--black);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* HERO BOTTOM */
+
+.hero-bottom {
+
+    position: absolute;
+
+    left: 7vw;
+
+    bottom: 35px;
+
+    display: flex;
+
+    gap: 15px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.2fr
+        1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.about-title h2 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size:
+        clamp(
+            70px,
+            8vw,
+            130px
+        );
+
+    line-height: 0.85;
+
+}
+
+
+.about-title h2 span {
+
+    color: var(--red);
+
+}
+
+
+/* IMAGE */
+
+.about-image {
+
+    position: relative;
+
+    border:
+        4px solid
+        var(--cream);
+
+    transform:
+        rotate(2deg);
+
+    box-shadow:
+        -12px 12px 0
+        var(--yellow);
+
+}
+
+
+.about-image img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+}
+
+
+.image-label {
+
+    position: absolute;
+
+    bottom: -18px;
+
+    left: 15px;
+
+    padding:
+        8px 14px;
+
+    background:
+        var(--red);
+
+    border:
+        2px solid
+        var(--cream);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+/* TEXT */
+
+.about-text {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.about-text p + p {
+
+    margin-top: 20px;
+
+}
+
+
+.text-link {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding-bottom: 7px;
+
+    border-bottom:
+        2px solid
+        var(--yellow);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.section-heading {
+
+    margin-bottom: 70px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size:
+        clamp(
+            70px,
+            10vw,
+            150px
+        );
+
+    line-height: 0.8;
+
+}
+
+
+.section-heading h2 span {
+
+    color: var(--yellow);
+
+}
+
+
+/* =====================================================
+   FEATURED WORK
+===================================================== */
+
+.projects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        70px 40px;
+
+}
+
+
+.project {
+
+    position: relative;
+
+}
+
+
+.project:nth-child(2) {
+
+    transform:
+        translateY(80px);
+
+}
+
+
+.project-number {
+
+    position: absolute;
+
+    top: -18px;
+
+    left: -18px;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--red);
+
+    border:
+        3px solid
+        var(--cream);
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 22px;
+
+    z-index: 4;
+
+}
+
+
+.project-media {
+
+    position: relative;
+
+    aspect-ratio:
+        16 / 10;
+
+    overflow: hidden;
+
+    border:
+        4px solid
+        var(--cream);
+
+    background:
+        #191919;
+
+    box-shadow:
+        10px 10px 0
+        var(--blue);
+
+}
+
+
+.project:nth-child(2)
+.project-media {
+
+    box-shadow:
+        10px 10px 0
+        var(--yellow);
+
+}
+
+
+.project:nth-child(3)
+.project-media {
+
+    box-shadow:
+        10px 10px 0
+        var(--red);
+
+}
+
+
+/* TEMPORARY PROJECT PLACEHOLDERS */
+
+.project-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 45px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(
+            245,
+            240,
+            223,
+            0.3
+        );
+
+}
+
+
+/* PROJECT INFO */
+
+.project-info {
+
+    margin-top: 20px;
+
+}
+
+
+.project-info h3 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 38px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.project-info p {
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.process-card {
+
+    min-height: 300px;
+
+    padding: 35px;
+
+    border:
+        3px solid
+        var(--cream);
+
+    position: relative;
+
+    background:
+        #181818;
+
+}
+
+
+.process-card:nth-child(1) {
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+.process-card:nth-child(2) {
+
+    transform:
+        translateY(30px)
+        rotate(1deg);
+
+    background:
+        var(--yellow);
+
+    color:
+        var(--black);
+
+}
+
+
+.process-card:nth-child(3) {
+
+    transform:
+        rotate(-1deg);
+
+    background:
+        var(--red);
+
+}
+
+
+.process-icon {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 50px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.process-card h3 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 35px;
+
+}
+
+
+.process-card p {
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   TOOLS
+===================================================== */
+
+.tools {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        2px solid
+        var(--cream);
+
+    border-left:
+        2px solid
+        var(--cream);
+
+}
+
+
+.tool {
+
+    min-height: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    border-right:
+        2px solid
+        var(--cream);
+
+    border-bottom:
+        2px solid
+        var(--cream);
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+
+}
+
+
+.tool:hover {
+
+    background:
+        var(--yellow);
+
+    color:
+        var(--black);
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.contact-top h2 {
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size:
+        clamp(
+            70px,
+            11vw,
+            170px
+        );
+
+    line-height: 0.78;
+
+}
+
+
+.contact-top h2 span {
+
+    color:
+        var(--yellow);
+
+}
+
+
+.contact-button {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 50px;
+
+    padding:
+        20px 30px;
+
+    background:
+        var(--red);
+
+    border:
+        3px solid
+        var(--cream);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        8px 8px 0
+        var(--blue);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.contact-button:hover {
+
+    transform:
+        translate(
+            5px,
+            5px
+        );
+
+}
+
+
+.contact-footer {
+
+    margin-top: 100px;
+
+    padding-top: 25px;
+
+    border-top:
+        2px solid
+        rgba(
+            245,
+            240,
+            223,
+            0.3
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    .navbar {
+
+        height: 65px;
+
+        padding:
+            0 6vw;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .menu-btn {
+
+        display: flex;
+
+    }
+
+
+    /* MOBILE NAV */
+
+    .nav-links.mobile-active {
+
+        display: flex;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding:
+            30px 6vw;
+
+        flex-direction:
+            column;
+
+        gap: 25px;
+
+        background:
+            #111111;
+
+        border-bottom:
+            2px solid
+            var(--cream);
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height:
+            100svh;
+
+        padding:
+            110px 6vw
+            40px;
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                65px,
+                17vw,
+                110px
+            );
+
+    }
+
+
+    .hero h1 span {
+
+        -webkit-text-stroke:
+            1px
+            var(--cream);
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    /* SHOWREEL */
+
+    .showreel-wrapper {
+
+        position:
+            relative;
+
+        right:
+            auto;
+
+        bottom:
+            auto;
+
+        width:
+            100%;
+
+        margin-top:
+            55px;
+
+    }
+
+
+    .showreel-frame {
+
+        box-shadow:
+            7px 7px 0
+            var(--red);
+
+    }
+
+
+    .hero-bottom {
+
+        display:
+            none;
+
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+
+        padding:
+            110px 6vw
+            80px;
+
+    }
+
+
+    .section-number {
+
+        top:
+            30px;
+
+        left:
+            6vw;
+
+    }
+
+
+    /* ABOUT */
+
+    .about {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            50px;
+
+    }
+
+
+    .about-title {
+
+        order:
+            1;
+
+    }
+
+
+    .about-image {
+
+        order:
+            2;
+
+        width:
+            80%;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .about-text {
+
+        order:
+            3;
+
+    }
+
+
+    /* PROJECTS */
+
+    .projects {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            60px;
+
+    }
+
+
+    .project:nth-child(2) {
+
+        transform:
+            none;
+
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .process-card:nth-child(2) {
+
+        transform:
+            none;
+
+    }
+
+
+    /* TOOLS */
+
+    .tools {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .tool {
+
+        min-height:
+            100px;
+
+        font-size:
+            24px;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact-footer {
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 500px) {
+
+
+    .hero h1 {
+
+        font-size:
+            19vw;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            22vw;
+
+    }
+
+
+    .about-title h2 {
+
+        font-size:
+            22vw;
+
+    }
+
+
+    .project-info h3 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .project-placeholder {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .process-card {
+
+        min-height:
+            260px;
+
+        padding:
+            25px;
+
+    }
+
+
+    .tools {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .tool {
+
+        min-height:
+            80px;
+
+    }
+
+
+    .contact-top h2 {
+
+        font-size:
+            21vw;
+
+    }
+
+}
