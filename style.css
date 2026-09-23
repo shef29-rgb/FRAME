@@ -90,8 +90,6 @@ button {
 }
 
 
-/* LOGO */
-
 .logo {
 
     font-family:
@@ -105,13 +103,9 @@ button {
 
 
 .logo span {
-
     color: var(--yellow);
-
 }
 
-
-/* NAVIGATION */
 
 .nav-links {
 
@@ -163,8 +157,6 @@ button {
 
 }
 
-
-/* MOBILE MENU BUTTON */
 
 .menu-btn {
 
@@ -281,8 +273,6 @@ button {
 }
 
 
-/* HALFTONE */
-
 .hero-halftone {
 
     position: absolute;
@@ -317,8 +307,6 @@ button {
 }
 
 
-/* HERO CONTENT */
-
 .hero-content {
 
     position: relative;
@@ -329,8 +317,6 @@ button {
 
 }
 
-
-/* REC LABEL */
 
 .comic-label {
 
@@ -364,13 +350,9 @@ button {
 
 
 .comic-label span {
-
     color: white;
-
 }
 
-
-/* HERO TITLE */
 
 .hero h1 {
 
@@ -407,8 +389,6 @@ button {
 }
 
 
-/* DESCRIPTION */
-
 .hero-description {
 
     margin-top: 30px;
@@ -421,8 +401,6 @@ button {
 
 }
 
-
-/* BUTTONS */
 
 .hero-buttons {
 
@@ -476,9 +454,7 @@ button {
 
 
 .btn-outline {
-
     background: transparent;
-
 }
 
 
@@ -551,8 +527,6 @@ button {
 }
 
 
-/* TEMPORARY SHOWREEL IMAGE */
-
 .showreel-image {
 
     width: 100%;
@@ -565,8 +539,6 @@ button {
 
 }
 
-
-/* PLAY BUTTON */
 
 .play-overlay {
 
@@ -614,8 +586,6 @@ button {
 }
 
 
-/* SHOWREEL LABEL */
-
 .video-time {
 
     position: absolute;
@@ -638,8 +608,6 @@ button {
 
 }
 
-
-/* HERO BOTTOM */
 
 .hero-bottom {
 
@@ -703,13 +671,9 @@ button {
 
 
 .about-title h2 span {
-
     color: var(--red);
-
 }
 
-
-/* IMAGE */
 
 .about-image {
 
@@ -774,8 +738,6 @@ button {
 }
 
 
-/* TEXT */
-
 .about-text {
 
     font-size: 16px;
@@ -786,9 +748,7 @@ button {
 
 
 .about-text p + p {
-
     margin-top: 20px;
-
 }
 
 
@@ -818,9 +778,7 @@ button {
 ===================================================== */
 
 .section-heading {
-
     margin-bottom: 70px;
-
 }
 
 
@@ -843,14 +801,12 @@ button {
 
 
 .section-heading h2 span {
-
     color: var(--yellow);
-
 }
 
 
 /* =====================================================
-   FEATURED WORK
+   MY EDITING ARSENAL
 ===================================================== */
 
 .projects {
@@ -867,16 +823,18 @@ button {
 
 
 .project {
-
     position: relative;
-
 }
 
 
-.project:nth-child(2) {
+.project:nth-child(2),
+.project:nth-child(5),
+.project:nth-child(8),
+.project:nth-child(11),
+.project:nth-child(14) {
 
     transform:
-        translateY(80px);
+        translateY(50px);
 
 }
 
@@ -940,8 +898,10 @@ button {
 }
 
 
-.project:nth-child(2)
-.project-media {
+.project:nth-child(2) .project-media,
+.project:nth-child(6) .project-media,
+.project:nth-child(10) .project-media,
+.project:nth-child(14) .project-media {
 
     box-shadow:
         10px 10px 0
@@ -950,8 +910,9 @@ button {
 }
 
 
-.project:nth-child(3)
-.project-media {
+.project:nth-child(3) .project-media,
+.project:nth-child(7) .project-media,
+.project:nth-child(11) .project-media {
 
     box-shadow:
         10px 10px 0
@@ -959,8 +920,6 @@ button {
 
 }
 
-
-/* TEMPORARY PROJECT PLACEHOLDERS */
 
 .project-placeholder {
 
@@ -974,6 +933,8 @@ button {
 
     justify-content: center;
 
+    padding: 20px;
+
     font-family:
         "Bebas Neue",
         sans-serif;
@@ -981,6 +942,8 @@ button {
     font-size: 45px;
 
     letter-spacing: 2px;
+
+    text-align: center;
 
     color:
         rgba(
@@ -993,12 +956,8 @@ button {
 }
 
 
-/* PROJECT INFO */
-
 .project-info {
-
     margin-top: 20px;
-
 }
 
 
@@ -1239,10 +1198,7 @@ button {
 
 
 .contact-top h2 span {
-
-    color:
-        var(--yellow);
-
+    color: var(--yellow);
 }
 
 
@@ -1321,6 +1277,13 @@ button {
 }
 
 
+.contact-footer a:hover {
+
+    color: var(--yellow);
+
+}
+
+
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -1352,8 +1315,6 @@ button {
     }
 
 
-    /* MOBILE NAV */
-
     .nav-links.mobile-active {
 
         display: flex;
@@ -1384,8 +1345,6 @@ button {
     }
 
 
-    /* HERO */
-
     .hero {
 
         min-height:
@@ -1402,9 +1361,7 @@ button {
 
 
     .hero-content {
-
         width: 100%;
-
     }
 
 
@@ -1441,14 +1398,9 @@ button {
 
 
     .hero-buttons {
-
-        flex-wrap:
-            wrap;
-
+        flex-wrap: wrap;
     }
 
-
-    /* SHOWREEL */
 
     .showreel-wrapper {
 
@@ -1480,14 +1432,9 @@ button {
 
 
     .hero-bottom {
-
-        display:
-            none;
-
+        display: none;
     }
 
-
-    /* SECTIONS */
 
     .section {
 
@@ -1509,8 +1456,6 @@ button {
     }
 
 
-    /* ABOUT */
-
     .about {
 
         display:
@@ -1529,10 +1474,7 @@ button {
 
 
     .about-title {
-
-        order:
-            1;
-
+        order: 1;
     }
 
 
@@ -1551,14 +1493,9 @@ button {
 
 
     .about-text {
-
-        order:
-            3;
-
+        order: 3;
     }
 
-
-    /* PROJECTS */
 
     .projects {
 
@@ -1571,7 +1508,11 @@ button {
     }
 
 
-    .project:nth-child(2) {
+    .project:nth-child(2),
+    .project:nth-child(5),
+    .project:nth-child(8),
+    .project:nth-child(11),
+    .project:nth-child(14) {
 
         transform:
             none;
@@ -1579,7 +1520,10 @@ button {
     }
 
 
-    /* PROCESS */
+    .project-info h3 {
+        font-size: 34px;
+    }
+
 
     .process-grid {
 
@@ -1596,8 +1540,6 @@ button {
 
     }
 
-
-    /* TOOLS */
 
     .tools {
 
@@ -1617,8 +1559,6 @@ button {
 
     }
 
-
-    /* CONTACT */
 
     .contact-footer {
 
@@ -1641,42 +1581,27 @@ button {
 
 
     .hero h1 {
-
-        font-size:
-            19vw;
-
+        font-size: 19vw;
     }
 
 
     .section-heading h2 {
-
-        font-size:
-            22vw;
-
+        font-size: 22vw;
     }
 
 
     .about-title h2 {
-
-        font-size:
-            22vw;
-
+        font-size: 22vw;
     }
 
 
     .project-info h3 {
-
-        font-size:
-            32px;
-
+        font-size: 32px;
     }
 
 
     .project-placeholder {
-
-        font-size:
-            32px;
-
+        font-size: 32px;
     }
 
 
@@ -1692,26 +1617,17 @@ button {
 
 
     .tools {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
 
     .tool {
-
-        min-height:
-            80px;
-
+        min-height: 80px;
     }
 
 
     .contact-top h2 {
-
-        font-size:
-            21vw;
-
+        font-size: 21vw;
     }
 
 }
