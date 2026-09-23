@@ -1,11 +1,9 @@
-/* =====================================================
-   FRAME/ — JAVASCRIPT
-===================================================== */
+/* =========================================
+   FRAME/ — ORIGINAL JAVASCRIPT
+========================================= */
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
@@ -19,8 +17,6 @@ if (menuToggle && navMenu) {
 
     });
 
-
-    /* Close menu after clicking a link */
 
     const navLinks = navMenu.querySelectorAll("a");
 
@@ -38,31 +34,21 @@ if (menuToggle && navMenu) {
 
 
 
-/* =========================
-   ACTIVE NAVIGATION
-========================= */
+/* ACTIVE NAVIGATION */
 
 const sections = document.querySelectorAll("section[id]");
 const navigationLinks = document.querySelectorAll(".nav-menu a");
 
 
-const observerOptions = {
+const observer = new IntersectionObserver(
 
-    root: null,
-
-    threshold: 0.25
-
-};
-
-
-const sectionObserver = new IntersectionObserver(
-    (entries) => {
+    entries => {
 
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
-                const currentId = entry.target.getAttribute("id");
+                const id = entry.target.getAttribute("id");
 
 
                 navigationLinks.forEach(link => {
@@ -74,7 +60,7 @@ const sectionObserver = new IntersectionObserver(
 
                 const activeLink =
                     document.querySelector(
-                        `.nav-menu a[href="#${currentId}"]`
+                        `.nav-menu a[href="#${id}"]`
                     );
 
 
@@ -89,21 +75,23 @@ const sectionObserver = new IntersectionObserver(
         });
 
     },
-    observerOptions
+
+    {
+        threshold: 0.25
+    }
+
 );
 
 
 sections.forEach(section => {
 
-    sectionObserver.observe(section);
+    observer.observe(section);
 
 });
 
 
 
-/* =========================
-   SMOOTH SCROLL
-========================= */
+/* SMOOTH SCROLL */
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -126,13 +114,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
             event.preventDefault();
 
-
             target.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
+                behavior: "smooth"
             });
 
         }
@@ -143,20 +126,18 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-/* =========================
-   SHOWREEL PLACEHOLDER
-========================= */
+/* SHOWREEL */
 
-const showreelFrame =
-    document.querySelector(".showreel-frame");
+const showreel =
+    document.querySelector(".showreel");
 
 
-if (showreelFrame) {
+if (showreel) {
 
-    showreelFrame.addEventListener("click", () => {
+    showreel.addEventListener("click", () => {
 
         console.log(
-            "Showreel clicked — connect your showreel video here."
+            "Showreel clicked."
         );
 
     });
@@ -165,9 +146,7 @@ if (showreelFrame) {
 
 
 
-/* =========================
-   WORK CARD INTERACTION
-========================= */
+/* WORK CARDS */
 
 const workCards =
     document.querySelectorAll(".work-card");
@@ -194,15 +173,8 @@ workCards.forEach(card => {
 });
 
 
+/* PAGE LOADED */
 
-/* =========================
-   PAGE LOAD
-========================= */
-
-window.addEventListener("load", () => {
-
-    console.log(
-        "FRAME/ portfolio loaded successfully."
-    );
-
-});
+console.log(
+    "FRAME/ portfolio loaded."
+);
