@@ -3,57 +3,34 @@
 ===================================================== */
 
 
-/* =====================================================
-   MOBILE NAVIGATION
-===================================================== */
+/* =========================
+   MOBILE MENU
+========================= */
 
-const menuButton =
-    document.querySelector(".menu-btn");
-
-const navLinks =
-    document.querySelector(".nav-links");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
 
-if (menuButton && navLinks) {
+if (menuToggle && navMenu) {
 
-    menuButton.addEventListener(
-        "click",
-        () => {
+    menuToggle.addEventListener("click", () => {
 
-            navLinks.classList.toggle(
-                "mobile-active"
-            );
+        navMenu.classList.toggle("active");
 
-            menuButton.classList.toggle(
-                "active"
-            );
-
-        }
-    );
+    });
 
 
-    /* Close menu when a link is clicked */
+    /* Close menu after clicking a link */
 
-    const links =
-        navLinks.querySelectorAll("a");
+    const navLinks = navMenu.querySelectorAll("a");
 
+    navLinks.forEach(link => {
 
-    links.forEach(link => {
+        link.addEventListener("click", () => {
 
-        link.addEventListener(
-            "click",
-            () => {
+            navMenu.classList.remove("active");
 
-                navLinks.classList.remove(
-                    "mobile-active"
-                );
-
-                menuButton.classList.remove(
-                    "active"
-                );
-
-            }
-        );
+        });
 
     });
 
@@ -61,135 +38,171 @@ if (menuButton && navLinks) {
 
 
 
-/* =====================================================
+/* =========================
    ACTIVE NAVIGATION
-===================================================== */
+========================= */
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-menu a");
 
 
-const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+const observerOptions = {
+
+    root: null,
+
+    threshold: 0.25
+
+};
 
 
-if (
-    sections.length &&
-    navigationLinks.length
-) {
+const sectionObserver = new IntersectionObserver(
+    (entries) => {
 
-    const sectionObserver =
-        new IntersectionObserver(
-            entries => {
+        entries.forEach(entry => {
 
-                entries.forEach(entry => {
+            if (entry.isIntersecting) {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        const currentId =
-                            entry.target.id;
+                const currentId = entry.target.getAttribute("id");
 
 
-                        navigationLinks.forEach(
-                            link => {
+                navigationLinks.forEach(link => {
 
-                                link.classList.remove(
-                                    "active"
-                                );
-
-
-                                if (
-                                    link.getAttribute(
-                                        "href"
-                                    ) ===
-                                    `#${currentId}`
-                                ) {
-
-                                    link.classList.add(
-                                        "active"
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    }
+                    link.classList.remove("active");
 
                 });
 
-            },
-            {
-                threshold: 0.45
+
+                const activeLink =
+                    document.querySelector(
+                        `.nav-menu a[href="#${currentId}"]`
+                    );
+
+
+                if (activeLink) {
+
+                    activeLink.classList.add("active");
+
+                }
+
             }
-        );
+
+        });
+
+    },
+    observerOptions
+);
 
 
-    sections.forEach(section => {
+sections.forEach(section => {
 
-        sectionObserver.observe(
-            section
-        );
-
-    });
-
-}
-
-
-
-/* =====================================================
-   PROJECT CARD CLICK
-===================================================== */
-
-const projectCards =
-    document.querySelectorAll(
-        ".project"
-    );
-
-
-projectCards.forEach(project => {
-
-    project.addEventListener(
-        "click",
-        () => {
-
-            console.log(
-                "Editing service selected."
-            );
-
-        }
-    );
+    sectionObserver.observe(section);
 
 });
 
 
 
-/* =====================================================
-   PAGE LOAD
-===================================================== */
+/* =========================
+   SMOOTH SCROLL
+========================= */
 
-window.addEventListener(
-    "load",
-    () => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-        document.body.classList.add(
-            "loaded"
-        );
+    link.addEventListener("click", function (event) {
+
+        const targetId =
+            this.getAttribute("href");
+
+
+        if (targetId === "#") {
+            return;
+        }
+
+
+        const target =
+            document.querySelector(targetId);
+
+
+        if (target) {
+
+            event.preventDefault();
+
+
+            target.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "start"
+
+            });
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================
+   SHOWREEL PLACEHOLDER
+========================= */
+
+const showreelFrame =
+    document.querySelector(".showreel-frame");
+
+
+if (showreelFrame) {
+
+    showreelFrame.addEventListener("click", () => {
 
         console.log(
-            "FRAME/ portfolio loaded successfully."
+            "Showreel clicked — connect your showreel video here."
         );
 
-    }
-);
+    });
 
-                                
+}
 
-        
-            
+
+
+/* =========================
+   WORK CARD INTERACTION
+========================= */
+
+const workCards =
+    document.querySelectorAll(".work-card");
+
+
+workCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const title =
+            card.querySelector("h3");
+
+        if (title) {
+
+            console.log(
+                "Selected:",
+                title.innerText
+            );
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================
+   PAGE LOAD
+========================= */
+
+window.addEventListener("load", () => {
+
+    console.log(
+        "FRAME/ portfolio loaded successfully."
+    );
+
+});
