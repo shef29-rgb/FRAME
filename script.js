@@ -1,143 +1,58 @@
-/* =========================================
-   FRAME/ — ORIGINAL JAVASCRIPT
-========================================= */
+/* =====================================================
+   FRAME/ — JAVASCRIPT
+===================================================== */
 
 
-/* MOBILE MENU */
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+const menuButton =
+    document.querySelector(".menu-btn");
 
-
-if (menuToggle && navMenu) {
-
-    menuToggle.addEventListener("click", () => {
-
-        navMenu.classList.toggle("active");
-
-    });
+const navLinks =
+    document.querySelector(".nav-links");
 
 
-    const navLinks = navMenu.querySelectorAll("a");
+if (menuButton && navLinks) {
 
-    navLinks.forEach(link => {
+    menuButton.addEventListener(
+        "click",
+        () => {
 
-        link.addEventListener("click", () => {
+            navLinks.classList.toggle(
+                "mobile-active"
+            );
 
-            navMenu.classList.remove("active");
+            menuButton.classList.toggle(
+                "active"
+            );
 
-        });
-
-    });
-
-}
-
-
-
-/* ACTIVE NAVIGATION */
-
-const sections = document.querySelectorAll("section[id]");
-const navigationLinks = document.querySelectorAll(".nav-menu a");
+        }
+    );
 
 
-const observer = new IntersectionObserver(
+    /* Close menu when a link is clicked */
 
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                const id = entry.target.getAttribute("id");
+    const links =
+        navLinks.querySelectorAll("a");
 
 
-                navigationLinks.forEach(link => {
+    links.forEach(link => {
 
-                    link.classList.remove("active");
+        link.addEventListener(
+            "click",
+            () => {
 
-                });
+                navLinks.classList.remove(
+                    "mobile-active"
+                );
 
-
-                const activeLink =
-                    document.querySelector(
-                        `.nav-menu a[href="#${id}"]`
-                    );
-
-
-                if (activeLink) {
-
-                    activeLink.classList.add("active");
-
-                }
+                menuButton.classList.remove(
+                    "active"
+                );
 
             }
-
-        });
-
-    },
-
-    {
-        threshold: 0.25
-    }
-
-);
-
-
-sections.forEach(section => {
-
-    observer.observe(section);
-
-});
-
-
-
-/* SMOOTH SCROLL */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId =
-            this.getAttribute("href");
-
-
-        if (targetId === "#") {
-            return;
-        }
-
-
-        const target =
-            document.querySelector(targetId);
-
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-
-
-/* SHOWREEL */
-
-const showreel =
-    document.querySelector(".showreel");
-
-
-if (showreel) {
-
-    showreel.addEventListener("click", () => {
-
-        console.log(
-            "Showreel clicked."
         );
 
     });
@@ -146,35 +61,130 @@ if (showreel) {
 
 
 
-/* WORK CARDS */
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
 
-const workCards =
-    document.querySelectorAll(".work-card");
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
 
 
-workCards.forEach(card => {
+const navigationLinks =
+    document.querySelectorAll(
+        ".nav-links a"
+    );
 
-    card.addEventListener("click", () => {
 
-        const title =
-            card.querySelector("h3");
+if (
+    sections.length &&
+    navigationLinks.length
+) {
 
-        if (title) {
+    const sectionObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        const currentId =
+                            entry.target.id;
+
+
+                        navigationLinks.forEach(
+                            link => {
+
+                                link.classList.remove(
+                                    "active"
+                                );
+
+
+                                if (
+                                    link.getAttribute(
+                                        "href"
+                                    ) ===
+                                    `#${currentId}`
+                                ) {
+
+                                    link.classList.add(
+                                        "active"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.45
+            }
+        );
+
+
+    sections.forEach(section => {
+
+        sectionObserver.observe(
+            section
+        );
+
+    });
+
+}
+
+
+
+/* =====================================================
+   PROJECT CARD CLICK
+===================================================== */
+
+const projectCards =
+    document.querySelectorAll(
+        ".project"
+    );
+
+
+projectCards.forEach(project => {
+
+    project.addEventListener(
+        "click",
+        () => {
 
             console.log(
-                "Selected:",
-                title.innerText
+                "Editing service selected."
             );
 
         }
-
-    });
+    );
 
 });
 
 
-/* PAGE LOADED */
 
-console.log(
-    "FRAME/ portfolio loaded."
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.classList.add(
+            "loaded"
+        );
+
+        console.log(
+            "FRAME/ portfolio loaded successfully."
+        );
+
+    }
 );
