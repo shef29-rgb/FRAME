@@ -1,12 +1,10 @@
-/* =====================================================
-   FRAME/ — VIDEO EDITOR PORTFOLIO
-   Comic Book × Cinema × Timeline
-===================================================== */
+/* =========================================
+   FRAME/ — ORIGINAL STYLE
+   Comic Book × Cinema
+========================================= */
 
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 * {
     margin: 0;
@@ -21,10 +19,16 @@ html {
 
 
 body {
-    background: #111111;
+    background: #111;
     color: #f5f0df;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
@@ -34,56 +38,32 @@ img {
 }
 
 
-a {
-    color: inherit;
-}
-
-
-button {
-    font-family: inherit;
-}
-
-
-
-/* =========================
-   VARIABLES
-========================= */
+/* COLORS */
 
 :root {
-
-    --black: #111111;
-
+    --black: #111;
     --cream: #f5f0df;
-
-    --yellow: #ffc400;
-
+    --yellow: #ffc300;
     --red: #e6392f;
-
     --blue: #2455ff;
-
-    --gray: #888888;
-
-    --dark-gray: #222222;
-
+    --gray: #888;
 }
 
 
-
-/* =========================
+/* =========================================
    NAVBAR
-========================= */
+========================================= */
 
 .navbar {
 
-    position: sticky;
+    position: fixed;
 
     top: 0;
-
-    z-index: 1000;
+    left: 0;
 
     width: 100%;
 
-    min-height: 82px;
+    height: 82px;
 
     padding: 0 6vw;
 
@@ -93,11 +73,11 @@ button {
 
     justify-content: space-between;
 
-    background: rgba(17, 17, 17, 0.96);
+    z-index: 1000;
 
-    border-bottom: 2px solid #333333;
+    background: #111;
 
-    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #444;
 
 }
 
@@ -110,15 +90,11 @@ button {
 
     letter-spacing: 2px;
 
-    line-height: 1;
-
 }
 
 
 .logo span {
-
     color: var(--yellow);
-
 }
 
 
@@ -126,16 +102,12 @@ button {
 
     display: flex;
 
-    align-items: center;
-
-    gap: 34px;
+    gap: 35px;
 
 }
 
 
 .nav-menu a {
-
-    text-decoration: none;
 
     font-size: 12px;
 
@@ -143,12 +115,13 @@ button {
 
     letter-spacing: 2px;
 
-    transition: 0.2s ease;
+    transition: 0.2s;
 
 }
 
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
 
     color: var(--yellow);
 
@@ -159,9 +132,9 @@ button {
 
     display: none;
 
-    border: none;
+    background: none;
 
-    background: transparent;
+    border: none;
 
     cursor: pointer;
 
@@ -184,62 +157,15 @@ button {
 
 
 
-/* =========================
-   COMMON SECTION
-========================= */
-
-.section {
-
-    width: 100%;
-
-    padding: 110px 6vw;
-
-}
-
-
-.section-heading {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    margin-bottom: 45px;
-
-}
-
-
-.section-number {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 28px;
-
-    color: var(--yellow);
-
-}
-
-
-.section-small-title {
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 5px;
-
-}
-
-
-
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
 
-    min-height: calc(100vh - 82px);
+    min-height: 100vh;
+
+    padding: 150px 6vw 100px;
 
     display: grid;
 
@@ -247,22 +173,37 @@ button {
 
     align-items: center;
 
-    gap: 60px;
+    gap: 70px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(36, 85, 255, 0.12),
+            transparent 30%
+        );
 
 }
 
 
-.eyebrow {
+.hero-left {
+
+    position: relative;
+
+}
+
+
+.hero-tag {
 
     display: inline-block;
 
-    margin-bottom: 25px;
+    background: var(--yellow);
+
+    color: #111;
 
     padding: 8px 12px;
 
-    background: var(--yellow);
-
-    color: var(--black);
+    margin-bottom: 25px;
 
     font-size: 11px;
 
@@ -277,9 +218,9 @@ button {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(70px, 10vw, 150px);
+    font-size: clamp(75px, 10vw, 150px);
 
-    line-height: 0.83;
+    line-height: 0.82;
 
     letter-spacing: -2px;
 
@@ -293,15 +234,15 @@ button {
 }
 
 
-.hero-description {
+.hero-left p {
 
     max-width: 500px;
 
-    margin-top: 35px;
+    margin-top: 30px;
 
-    color: #bdbdbd;
+    color: #aaa;
 
-    font-size: 17px;
+    font-size: 16px;
 
     line-height: 1.7;
 
@@ -312,24 +253,20 @@ button {
 
     display: flex;
 
-    flex-wrap: wrap;
-
     gap: 18px;
 
     margin-top: 35px;
+
+    flex-wrap: wrap;
 
 }
 
 
 .btn {
 
-    display: inline-block;
-
-    padding: 18px 27px;
+    padding: 18px 25px;
 
     border: 2px solid var(--cream);
-
-    text-decoration: none;
 
     font-size: 12px;
 
@@ -337,12 +274,12 @@ button {
 
     letter-spacing: 2px;
 
-    transition: 0.2s ease;
+    transition: 0.2s;
 
 }
 
 
-.btn-red {
+.primary-btn {
 
     background: var(--red);
 
@@ -351,7 +288,7 @@ button {
 }
 
 
-.btn-red:hover {
+.primary-btn:hover {
 
     transform: translate(4px, 4px);
 
@@ -360,28 +297,28 @@ button {
 }
 
 
-.btn-outline:hover {
+.secondary-btn:hover {
 
     background: var(--cream);
 
-    color: var(--black);
+    color: #111;
 
 }
 
 
 
-/* =========================
+/* =========================================
    SHOWREEL
-========================= */
+========================================= */
 
-.showreel-wrapper {
+.hero-right {
 
     position: relative;
 
 }
 
 
-.showreel-label {
+.showreel-top {
 
     margin-bottom: 12px;
 
@@ -390,8 +327,6 @@ button {
     font-weight: 800;
 
     letter-spacing: 3px;
-
-    color: var(--cream);
 
 }
 
@@ -410,35 +345,29 @@ button {
 
     background: var(--red);
 
-    box-shadow: 0 0 10px var(--red);
-
 }
 
 
-.showreel-frame {
+.showreel {
 
     position: relative;
 
-    overflow: hidden;
-
     border: 3px solid var(--cream);
 
-    background: #222;
-
     box-shadow: 12px 12px 0 var(--yellow);
+
+    overflow: hidden;
 
 }
 
 
-.showreel-image {
+.showreel img {
 
     width: 100%;
 
     aspect-ratio: 16 / 10;
 
     object-fit: cover;
-
-    filter: saturate(0.85);
 
 }
 
@@ -457,18 +386,24 @@ button {
 
     flex-direction: column;
 
-    gap: 15px;
+    gap: 12px;
 
-    background: rgba(0, 0, 0, 0.28);
+    background: rgba(0, 0, 0, 0.3);
 
 }
 
 
 .play-button {
 
-    width: 76px;
+    width: 70px;
 
-    height: 76px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--cream);
+
+    background: var(--red);
 
     display: flex;
 
@@ -476,15 +411,7 @@ button {
 
     justify-content: center;
 
-    border-radius: 50%;
-
-    background: var(--red);
-
-    border: 3px solid var(--cream);
-
-    color: white;
-
-    font-size: 25px;
+    font-size: 23px;
 
     padding-left: 4px;
 
@@ -503,9 +430,58 @@ button {
 
 
 
-/* =========================
+/* =========================================
+   COMMON SECTION
+========================================= */
+
+.section {
+
+    padding: 110px 6vw;
+
+}
+
+
+.section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 45px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+
+.section-label span {
+
+    color: var(--yellow);
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 28px;
+
+}
+
+
+
+/* =========================================
    ABOUT
-========================= */
+========================================= */
+
+.about {
+
+    background: #111;
+
+}
+
 
 .about-grid {
 
@@ -520,7 +496,7 @@ button {
 }
 
 
-.comic-panel {
+.about-image {
 
     position: relative;
 
@@ -542,7 +518,7 @@ button {
 }
 
 
-.image-label {
+.image-caption {
 
     position: absolute;
 
@@ -554,7 +530,7 @@ button {
 
     background: var(--yellow);
 
-    color: var(--black);
+    color: #111;
 
     font-size: 11px;
 
@@ -565,52 +541,48 @@ button {
 }
 
 
-.about-content h2 {
+.about-text h2 {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(60px, 8vw, 110px);
+    font-size: clamp(65px, 8vw, 115px);
 
-    line-height: 0.85;
+    line-height: 0.82;
 
     margin-bottom: 30px;
 
 }
 
 
-.about-content h2 span {
+.about-text h2 span {
 
     color: var(--red);
 
 }
 
 
-.about-content p {
+.about-text p {
 
-    max-width: 650px;
+    max-width: 600px;
 
-    margin-bottom: 20px;
-
-    color: #bdbdbd;
-
-    font-size: 16px;
+    color: #aaa;
 
     line-height: 1.8;
+
+    margin-bottom: 20px;
 
 }
 
 
-.about-tag {
+.about-stamp {
 
     display: inline-block;
 
     margin-top: 15px;
 
-    padding: 12px 16px;
+    padding: 12px 15px;
 
     background: var(--blue);
-
-    color: white;
 
     font-size: 11px;
 
@@ -622,9 +594,9 @@ button {
 
 
 
-/* =========================
-   WORK
-========================= */
+/* =========================================
+   MY WORK
+========================================= */
 
 .work {
 
@@ -632,18 +604,18 @@ button {
 
         radial-gradient(
             circle at 20% 20%,
-            rgba(255, 196, 0, 0.08),
+            rgba(255, 195, 0, 0.08),
             transparent 25%
         );
 
 }
 
 
-.work-title-row {
+.work-heading {
 
     display: flex;
 
-    align-items: end;
+    align-items: flex-end;
 
     justify-content: space-between;
 
@@ -654,25 +626,25 @@ button {
 }
 
 
-.work-title-row h2 {
+.work-heading h2 {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(70px, 10vw, 140px);
+    font-size: clamp(75px, 10vw, 140px);
 
     line-height: 0.8;
 
 }
 
 
-.work-title-row h2 span {
+.work-heading h2 span {
 
     color: var(--yellow);
 
 }
 
 
-.work-title-row p {
+.work-heading p {
 
     max-width: 400px;
 
@@ -689,26 +661,24 @@ button {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 
 }
 
 
 .work-card {
 
-    min-height: 300px;
+    min-height: 290px;
 
-    padding: 28px;
+    padding: 25px;
 
-    position: relative;
+    border: 3px solid #111;
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: space-between;
-
-    border: 3px solid var(--black);
 
     transition: 0.25s ease;
 
@@ -717,53 +687,41 @@ button {
 
 .work-card:hover {
 
-    transform: translateY(-8px) rotate(-1deg);
+    transform: translateY(-8px);
 
 }
 
 
 .work-card:nth-child(3n + 1) {
-
     transform: rotate(-1deg);
-
 }
 
 
 .work-card:nth-child(3n + 2) {
-
-    transform: rotate(0.7deg);
-
+    transform: rotate(0.6deg);
 }
 
 
 .work-card:nth-child(3n) {
-
     transform: rotate(-0.5deg);
-
 }
 
 
-.work-card:nth-child(3n + 1):hover,
-
-.work-card:nth-child(3n + 2):hover,
-
-.work-card:nth-child(3n):hover {
-
+.work-card:hover {
     transform: translateY(-8px) rotate(0deg);
-
 }
 
 
-.card-yellow {
+.yellow-card {
 
     background: var(--yellow);
 
-    color: var(--black);
+    color: #111;
 
 }
 
 
-.card-red {
+.red-card {
 
     background: var(--red);
 
@@ -772,7 +730,7 @@ button {
 }
 
 
-.card-blue {
+.blue-card {
 
     background: var(--blue);
 
@@ -781,20 +739,20 @@ button {
 }
 
 
-.card-cream {
+.cream-card {
 
     background: var(--cream);
 
-    color: var(--black);
+    color: #111;
 
 }
 
 
-.card-number {
+.work-number {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 34px;
+    font-size: 32px;
 
 }
 
@@ -803,7 +761,7 @@ button {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 42px;
+    font-size: 39px;
 
     line-height: 0.9;
 
@@ -812,9 +770,7 @@ button {
 
 .work-card p {
 
-    max-width: 300px;
-
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -824,9 +780,9 @@ button {
 
 
 
-/* =========================
+/* =========================================
    PROCESS
-========================= */
+========================================= */
 
 .process {
 
@@ -835,11 +791,11 @@ button {
 }
 
 
-.process h2 {
+.process > h2 {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(70px, 11vw, 150px);
+    font-size: clamp(75px, 11vw, 150px);
 
     line-height: 0.8;
 
@@ -848,7 +804,7 @@ button {
 }
 
 
-.process h2 span {
+.process > h2 span {
 
     color: var(--yellow);
 
@@ -863,51 +819,51 @@ button {
 
     align-items: center;
 
-    gap: 25px;
+    gap: 20px;
 
 }
 
 
-.process-step {
+.process-box {
+
+    min-height: 220px;
 
     padding: 30px;
 
     border: 2px solid #555;
 
-    min-height: 230px;
-
 }
 
 
-.process-step > span {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 40px;
+.process-box > span {
 
     color: var(--yellow);
 
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 38px;
+
 }
 
 
-.process-step h3 {
+.process-box h3 {
 
-    margin-top: 25px;
+    margin-top: 20px;
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 35px;
+    font-size: 34px;
 
 }
 
 
-.process-step p {
+.process-box p {
 
     margin-top: 12px;
 
     color: #999;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.6;
 
@@ -916,17 +872,17 @@ button {
 
 .process-arrow {
 
-    font-size: 40px;
-
     color: var(--red);
+
+    font-size: 40px;
 
 }
 
 
 
-/* =========================
+/* =========================================
    TOOLS
-========================= */
+========================================= */
 
 .tools-section {
 
@@ -935,11 +891,11 @@ button {
 }
 
 
-.tools-section h2 {
+.tools-section > h2 {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(70px, 10vw, 130px);
+    font-size: clamp(75px, 10vw, 135px);
 
     line-height: 0.8;
 
@@ -948,7 +904,7 @@ button {
 }
 
 
-.tools-section h2 span {
+.tools-section > h2 span {
 
     color: var(--blue);
 
@@ -974,17 +930,17 @@ button {
 
     padding: 25px;
 
+    border-right: 2px solid #444;
+
+    border-bottom: 2px solid #444;
+
     display: flex;
 
     flex-direction: column;
 
     justify-content: space-between;
 
-    border-right: 2px solid #444;
-
-    border-bottom: 2px solid #444;
-
-    transition: 0.2s ease;
+    transition: 0.2s;
 
 }
 
@@ -993,32 +949,32 @@ button {
 
     background: var(--yellow);
 
-    color: var(--black);
+    color: #111;
 
 }
 
 
-.tool-number {
+.tool span {
+
+    color: var(--yellow);
 
     font-family: "Bebas Neue", sans-serif;
 
     font-size: 25px;
 
-    color: var(--yellow);
-
 }
 
 
-.tool:hover .tool-number {
+.tool:hover span {
 
-    color: var(--black);
+    color: #111;
 
 }
 
 
 .tool strong {
 
-    font-size: 14px;
+    font-size: 13px;
 
     letter-spacing: 2px;
 
@@ -1026,13 +982,15 @@ button {
 
 
 
-/* =========================
+/* =========================================
    CONTACT
-========================= */
+========================================= */
 
 .contact {
 
     min-height: 90vh;
+
+    padding: 120px 6vw;
 
     display: flex;
 
@@ -1041,7 +999,7 @@ button {
 }
 
 
-.contact-content h2 {
+.contact-inner h2 {
 
     margin-top: 25px;
 
@@ -1051,12 +1009,10 @@ button {
 
     line-height: 0.8;
 
-    letter-spacing: -2px;
-
 }
 
 
-.contact-content h2 span {
+.contact-inner h2 span {
 
     color: var(--yellow);
 
@@ -1069,25 +1025,23 @@ button {
 
     margin-top: 60px;
 
-    padding: 25px 50px;
+    padding: 24px 45px;
 
     background: var(--red);
-
-    color: white;
 
     border: 4px solid var(--cream);
 
     box-shadow: 10px 10px 0 var(--blue);
 
-    text-decoration: none;
+    color: white;
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 900;
 
     letter-spacing: 3px;
 
-    transition: 0.2s ease;
+    transition: 0.2s;
 
 }
 
@@ -1102,9 +1056,9 @@ button {
 
 
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 .footer {
 
@@ -1119,7 +1073,7 @@ button {
 
     background: #444;
 
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 
 }
 
@@ -1132,20 +1086,18 @@ button {
 
     align-items: flex-start;
 
-    gap: 40px;
-
 }
 
 
 .copyright {
+
+    color: #999;
 
     font-size: 12px;
 
     font-weight: 800;
 
     letter-spacing: 3px;
-
-    color: #999;
 
 }
 
@@ -1156,7 +1108,7 @@ button {
 
     flex-direction: column;
 
-    gap: 18px;
+    gap: 20px;
 
 }
 
@@ -1169,9 +1121,7 @@ button {
 
     gap: 12px;
 
-    text-decoration: none;
-
-    color: var(--cream);
+    color: #999;
 
     font-size: 12px;
 
@@ -1179,25 +1129,25 @@ button {
 
     letter-spacing: 3px;
 
-    transition: 0.2s ease;
+    transition: 0.2s;
 
 }
 
 
 .footer-link:hover {
 
-    transform: translateX(6px);
-
     color: var(--yellow);
+
+    transform: translateX(5px);
 
 }
 
 
-.footer-icon {
+.social-icon {
 
-    width: 24px;
+    width: 23px;
 
-    height: 24px;
+    height: 23px;
 
     display: inline-flex;
 
@@ -1207,7 +1157,7 @@ button {
 
     border: 2px solid currentColor;
 
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1;
 
@@ -1218,7 +1168,7 @@ button {
 
     border-radius: 6px;
 
-    font-size: 20px;
+    font-size: 18px;
 
 }
 
@@ -1227,7 +1177,7 @@ button {
 
     border-radius: 3px;
 
-    font-size: 15px;
+    font-size: 14px;
 
 }
 
@@ -1240,32 +1190,14 @@ button {
 
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 900px) {
 
-    .navbar {
-
-        min-height: 72px;
-
-        padding: 0 6vw;
-
-    }
-
-
-    .logo {
-
-        font-size: 40px;
-
-    }
-
-
     .menu-toggle {
-
         display: block;
-
     }
 
 
@@ -1273,7 +1205,7 @@ button {
 
         position: absolute;
 
-        top: 72px;
+        top: 82px;
 
         left: 0;
 
@@ -1285,11 +1217,9 @@ button {
 
         flex-direction: column;
 
-        align-items: flex-start;
-
         gap: 22px;
 
-        background: var(--black);
+        background: #111;
 
         border-bottom: 2px solid #444;
 
@@ -1297,9 +1227,7 @@ button {
 
 
     .nav-menu.active {
-
         display: flex;
-
     }
 
 
@@ -1307,23 +1235,7 @@ button {
 
         grid-template-columns: 1fr;
 
-        min-height: auto;
-
-        padding-top: 80px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: clamp(70px, 18vw, 120px);
-
-    }
-
-
-    .showreel-wrapper {
-
-        margin-top: 30px;
+        padding-top: 130px;
 
     }
 
@@ -1331,15 +1243,6 @@ button {
     .about-grid {
 
         grid-template-columns: 1fr;
-
-        gap: 60px;
-
-    }
-
-
-    .about-image {
-
-        max-width: 550px;
 
     }
 
@@ -1373,31 +1276,19 @@ button {
 
     }
 
-
-    .footer-content {
-
-        flex-direction: column;
-
-    }
-
 }
 
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 550px) {
 
-    .section {
-
-        padding: 80px 6vw;
-
-    }
-
-
     .navbar {
+
+        height: 72px;
 
         padding: 0 6vw;
 
@@ -1406,28 +1297,28 @@ button {
 
     .logo {
 
-        font-size: 38px;
+        font-size: 40px;
+
+    }
+
+
+    .nav-menu {
+
+        top: 72px;
 
     }
 
 
     .hero {
 
-        padding-top: 65px;
+        padding: 120px 6vw 80px;
 
     }
 
 
     .hero h1 {
 
-        font-size: clamp(64px, 19vw, 100px);
-
-    }
-
-
-    .hero-description {
-
-        font-size: 15px;
+        font-size: clamp(65px, 18vw, 105px);
 
     }
 
@@ -1435,8 +1326,6 @@ button {
     .hero-buttons {
 
         flex-direction: column;
-
-        align-items: stretch;
 
     }
 
@@ -1448,21 +1337,21 @@ button {
     }
 
 
-    .showreel-frame {
+    .showreel {
 
         box-shadow: 7px 7px 0 var(--yellow);
 
     }
 
 
-    .section-heading {
+    .section {
 
-        margin-bottom: 30px;
+        padding: 80px 6vw;
 
     }
 
 
-    .work-title-row {
+    .work-heading {
 
         flex-direction: column;
 
@@ -1475,21 +1364,12 @@ button {
 
         grid-template-columns: 1fr;
 
-        gap: 20px;
-
     }
 
 
     .work-card {
 
         min-height: 260px;
-
-    }
-
-
-    .work-card h3 {
-
-        font-size: 38px;
 
     }
 
@@ -1501,7 +1381,16 @@ button {
     }
 
 
-    .contact-content h2 {
+    .contact {
+
+        min-height: auto;
+
+        padding: 100px 6vw;
+
+    }
+
+
+    .contact-inner h2 {
 
         font-size: clamp(65px, 18vw, 100px);
 
@@ -1512,21 +1401,16 @@ button {
 
         width: 100%;
 
-        padding: 22px 15px;
-
         text-align: center;
 
-    }
-
-
-    .footer {
-
-        padding-bottom: 40px;
+        padding: 22px 12px;
 
     }
 
 
     .footer-content {
+
+        flex-direction: column;
 
         gap: 35px;
 
