@@ -2,74 +2,146 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="FRAME/ — Video Editor & Visual Storyteller"
+    >
 
     <title>FRAME/ — Video Editor</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
 
-        <div class="logo">
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
             FRAME<span>/</span>
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#home">HOME</a>
+
+            <a href="#about">ABOUT</a>
+
+            <a href="#work">WORK</a>
+
+            <a href="#process">PROCESS</a>
+
+            <a href="#contact">CONTACT</a>
+
         </div>
 
-        <button class="menu-toggle" id="menuToggle">
+
+        <button
+            class="menu-btn"
+            aria-label="Open navigation menu"
+        >
+
             <span></span>
             <span></span>
-            <span></span>
+
         </button>
 
-        <nav class="nav-menu" id="navMenu">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#work">WORK</a>
-            <a href="#process">PROCESS</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-
-    </header>
+    </nav>
 
 
-    <!-- HERO -->
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
     <section class="hero" id="home">
 
-        <div class="hero-left">
+        <div class="hero-halftone"></div>
 
-            <div class="hero-tag">
-                VIDEO EDITOR / CREATIVE
+
+        <div class="hero-content">
+
+            <div class="comic-label">
+
+                <span>●</span>
+
+                REC / 001
+
             </div>
 
+
             <h1>
-                I CUT.<br>
-                I CREATE.<br>
-                <span>YOU REMEMBER.</span>
+
+                I CUT.
+
+                <br>
+
+                <span>I CREATE.</span>
+
+                <br>
+
+                YOU REMEMBER.
+
             </h1>
 
-            <p>
-                Turning raw footage into stories,
-                visuals and experiences worth watching.
+
+            <p class="hero-description">
+
+                VIDEO EDITOR & VISUAL STORYTELLER
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#work" class="btn primary-btn">
-                    SEE MY WORK →
+                <a
+                    href="#work"
+                    class="btn btn-primary"
+                >
+
+                    VIEW MY WORK
+
                 </a>
 
-                <a href="#contact" class="btn secondary-btn">
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline"
+                >
+
                     LET'S TALK
+
                 </a>
 
             </div>
@@ -77,30 +149,63 @@
         </div>
 
 
-        <div class="hero-right">
 
-            <div class="showreel-top">
-                <span class="rec-dot"></span>
-                SHOWREEL / 2026
+        <!-- ==================================================
+             SHOWREEL
+        ================================================== -->
+
+        <div class="showreel-wrapper">
+
+            <div class="showreel-tag">
+
+                SHOWREEL
+
             </div>
 
-            <div class="showreel">
 
-                <img src="assets/editor.png" alt="Video Editor">
+            <div class="showreel-frame">
 
-                <div class="showreel-overlay">
+                <img
+                    src="assets/editor.png"
+                    alt="Video editing workstation"
+                    class="showreel-image"
+                >
+
+
+                <div class="play-overlay">
 
                     <div class="play-button">
+
                         ▶
+
                     </div>
 
-                    <span>
-                        SHOWREEL
-                    </span>
+                </div>
+
+
+                <div class="video-time">
+
+                    SHOWREEL / COMING SOON
 
                 </div>
 
             </div>
+
+        </div>
+
+
+
+        <div class="hero-bottom">
+
+            <span>VIDEO EDITOR</span>
+
+            <span>•</span>
+
+            <span>FILMMAKER</span>
+
+            <span>•</span>
+
+            <span>STORYTELLER</span>
 
         </div>
 
@@ -108,477 +213,88 @@
 
 
 
-    <!-- ABOUT -->
-    <section class="section about" id="about">
+    <!-- ==================================================
+         ABOUT
+    ================================================== -->
 
-        <div class="section-label">
-            <span>01</span>
-            MEET THE EDITOR
-        </div>
+    <section
+        class="about section"
+        id="about"
+    >
 
-        <div class="about-grid">
+        <div class="section-number">
 
-            <div class="about-image">
-
-                <img src="assets/editor.png" alt="Editor">
-
-                <div class="image-caption">
-                    FRAME / EDITOR
-                </div>
-
-            </div>
-
-
-            <div class="about-text">
-
-                <h2>
-                    NOT JUST CUTS.<br>
-                    <span>STORY.</span>
-                </h2>
-
-                <p>
-                    I’m a creative video editor who believes
-                    editing is more than simply cutting clips.
-                </p>
-
-                <p>
-                    It's about rhythm, emotion, storytelling
-                    and knowing exactly when the next frame
-                    should appear.
-                </p>
-
-                <div class="about-stamp">
-                    CUT WITH PURPOSE.
-                </div>
-
-            </div>
+            01
 
         </div>
 
-    </section>
 
+        <div class="about-title">
 
+            <p class="small-title">
 
-    <!-- MY WORK -->
-    <section class="section work" id="work">
+                MEET THE EDITOR
 
-        <div class="section-label">
-            <span>02</span>
-            WHAT I DO
-        </div>
-
-        <div class="work-heading">
-
-            <h2>
-                MY <span>WORK</span>
-            </h2>
-
-            <p>
-                From raw footage to the final frame —
-                here's what I bring to the edit.
             </p>
 
-        </div>
-
-
-        <!-- 14 DOMAINS -->
-
-        <div class="work-grid">
-
-
-            <!-- 01 -->
-            <div class="work-card yellow-card">
-
-                <div class="work-number">01</div>
-
-                <h3>
-                    SHORT-FORM<br>
-                    CONTENT
-                </h3>
-
-                <p>
-                    Reels, Shorts & TikToks
-                </p>
-
-            </div>
-
-
-            <!-- 02 -->
-            <div class="work-card red-card">
-
-                <div class="work-number">02</div>
-
-                <h3>
-                    TALKING-HEAD<br>
-                    EDITING
-                </h3>
-
-                <p>
-                    Clean cuts, pacing & retention
-                </p>
-
-            </div>
-
-
-            <!-- 03 -->
-            <div class="work-card blue-card">
-
-                <div class="work-number">03</div>
-
-                <h3>
-                    MOTION<br>
-                    GRAPHICS
-                </h3>
-
-                <p>
-                    Text animation, transitions & visual elements
-                </p>
-
-            </div>
-
-
-            <!-- 04 -->
-            <div class="work-card cream-card">
-
-                <div class="work-number">04</div>
-
-                <h3>
-                    AFTER EFFECTS<br>
-                    ANIMATION
-                </h3>
-
-                <p>
-                    2D animation, kinetic typography & effects
-                </p>
-
-            </div>
-
-
-            <!-- 05 -->
-            <div class="work-card yellow-card">
-
-                <div class="work-number">05</div>
-
-                <h3>
-                    STORYTELLING<br>
-                    & PACING
-                </h3>
-
-                <p>
-                    Turning raw footage into engaging narratives
-                </p>
-
-            </div>
-
-
-            <!-- 06 -->
-            <div class="work-card red-card">
-
-                <div class="work-number">06</div>
-
-                <h3>
-                    SOUND<br>
-                    DESIGN
-                </h3>
-
-                <p>
-                    SFX, ambience, music syncing & audio enhancement
-                </p>
-
-            </div>
-
-
-            <!-- 07 -->
-            <div class="work-card blue-card">
-
-                <div class="work-number">07</div>
-
-                <h3>
-                    COLOR CORRECTION<br>
-                    & GRADING
-                </h3>
-
-                <p>
-                    Clean, consistent & cinematic looks
-                </p>
-
-            </div>
-
-
-            <!-- 08 -->
-            <div class="work-card cream-card">
-
-                <div class="work-number">08</div>
-
-                <h3>
-                    B-ROLL & VISUAL<br>
-                    STORYTELLING
-                </h3>
-
-                <p>
-                    Relevant footage, overlays & visual sequences
-                </p>
-
-            </div>
-
-
-            <!-- 09 -->
-            <div class="work-card yellow-card">
-
-                <div class="work-number">09</div>
-
-                <h3>
-                    CAPTIONS &<br>
-                    TYPOGRAPHY
-                </h3>
-
-                <p>
-                    Dynamic subtitles and on-screen text
-                </p>
-
-            </div>
-
-
-            <!-- 10 -->
-            <div class="work-card red-card">
-
-                <div class="work-number">10</div>
-
-                <h3>
-                    GREEN SCREEN /<br>
-                    CHROMA KEY
-                </h3>
-
-                <p>
-                    Subject isolation & compositing
-                </p>
-
-            </div>
-
-
-            <!-- 11 -->
-            <div class="work-card blue-card">
-
-                <div class="work-number">11</div>
-
-                <h3>
-                    DOCUMENTARY-STYLE<br>
-                    EDITING
-                </h3>
-
-                <p>
-                    Research-driven visuals, timelines & narration
-                </p>
-
-            </div>
-
-
-            <!-- 12 -->
-            <div class="work-card cream-card">
-
-                <div class="work-number">12</div>
-
-                <h3>
-                    COMMERCIAL /<br>
-                    AD EDITING
-                </h3>
-
-                <p>
-                    Product-focused, conversion-oriented edits
-                </p>
-
-            </div>
-
-
-            <!-- 13 -->
-            <div class="work-card yellow-card">
-
-                <div class="work-number">13</div>
-
-                <h3>
-                    SOCIAL MEDIA<br>
-                    OPTIMIZATION
-                </h3>
-
-                <p>
-                    9:16, 1:1 & 16:9 formats
-                </p>
-
-            </div>
-
-
-            <!-- 14 -->
-            <div class="work-card red-card">
-
-                <div class="work-number">14</div>
-
-                <h3>
-                    GRAPHIC<br>
-                    DESIGN
-                </h3>
-
-                <p>
-                    Photoshop & Illustrator for custom visuals
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- PROCESS -->
-    <section class="section process" id="process">
-
-        <div class="section-label">
-            <span>03</span>
-            HOW IT'S MADE
-        </div>
-
-        <h2>
-            RAW <span>→</span> FINAL
-        </h2>
-
-
-        <div class="process-grid">
-
-            <div class="process-box">
-
-                <span>01</span>
-
-                <h3>
-                    RAW FOOTAGE
-                </h3>
-
-                <p>
-                    Understanding the footage,
-                    story and objective.
-                </p>
-
-            </div>
-
-
-            <div class="process-arrow">
-                →
-            </div>
-
-
-            <div class="process-box">
-
-                <span>02</span>
-
-                <h3>
-                    EDIT
-                </h3>
-
-                <p>
-                    Cutting, pacing, sound,
-                    graphics and visual flow.
-                </p>
-
-            </div>
-
-
-            <div class="process-arrow">
-                →
-            </div>
-
-
-            <div class="process-box">
-
-                <span>03</span>
-
-                <h3>
-                    FINAL FRAME
-                </h3>
-
-                <p>
-                    Color, polish, export
-                    and final delivery.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- TOOLS -->
-    <section class="section tools-section">
-
-        <div class="section-label">
-            <span>04</span>
-            THE TOOLBOX
-        </div>
-
-        <h2>
-            TOOLS I <span>USE</span>
-        </h2>
-
-
-        <div class="tools">
-
-            <div class="tool">
-                <span>01</span>
-                <strong>PREMIERE PRO</strong>
-            </div>
-
-            <div class="tool">
-                <span>02</span>
-                <strong>AFTER EFFECTS</strong>
-            </div>
-
-            <div class="tool">
-                <span>03</span>
-                <strong>DAVINCI RESOLVE</strong>
-            </div>
-
-            <div class="tool">
-                <span>04</span>
-                <strong>PHOTOSHOP</strong>
-            </div>
-
-            <div class="tool">
-                <span>05</span>
-                <strong>CAPCUT</strong>
-            </div>
-
-            <div class="tool">
-                <span>06</span>
-                <strong>MOTION DESIGN</strong>
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <div class="contact-inner">
-
-            <div class="section-label">
-                GOT A PROJECT?
-            </div>
 
             <h2>
-                LET'S MAKE<br>
-                SOMETHING<br>
-                <span>WORTH WATCHING.</span>
+
+                BEHIND
+
+                <br>
+
+                THE <span>EDIT.</span>
+
             </h2>
 
-            <a
-                href="mailto:Createsmanthan@gmail.com"
-                class="contact-button"
+        </div>
+
+
+        <div class="about-image">
+
+            <img
+                src="assets/editor.png"
+                alt="Video editor working at an editing workstation"
             >
-                START A PROJECT →
+
+
+            <div class="image-label">
+
+                EDITOR / 001
+
+            </div>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <p>
+
+                I'm a video editor focused on turning
+                raw footage into visuals that people
+                actually remember.
+
+            </p>
+
+
+            <p>
+
+                From cinematic storytelling to
+                fast-paced social content, every cut
+                has a purpose.
+
+            </p>
+
+
+            <a
+                href="#contact"
+                class="text-link"
+            >
+
+                WORK WITH ME →
+
             </a>
 
         </div>
@@ -587,57 +303,749 @@
 
 
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- ==================================================
+         MY EDITING ARSENAL
+    ================================================== -->
 
-        <div class="footer-line"></div>
+    <section
+        class="work section"
+        id="work"
+    >
 
-        <div class="footer-content">
+        <div class="section-number">
 
-            <div class="copyright">
-                © 2026 FRAME/
-            </div>
-
-
-            <div class="footer-links">
-
-                <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="footer-link"
-                >
-
-                    <span class="social-icon instagram-icon">
-                        ◎
-                    </span>
-
-                    INSTAGRAM
-
-                </a>
-
-
-                <a
-                    href="mailto:Createsmanthan@gmail.com"
-                    class="footer-link email-link"
-                >
-
-                    <span class="social-icon email-icon">
-                        ✉
-                    </span>
-
-                    EMAIL
-
-                </a>
-
-            </div>
+            02
 
         </div>
 
-    </footer>
 
+        <div class="section-heading">
+
+            <p class="small-title">
+
+                WHAT I DO
+
+            </p>
+
+
+            <h2>
+
+                MY EDITING
+
+                <span>ARSENAL</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="projects">
+
+
+            <!-- 01 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        SHORT-FORM
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        SHORT-FORM CONTENT
+                    </h3>
+
+                    <p>
+                        REELS / SHORTS / TIKTOKS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 02 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        TALKING HEAD
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        TALKING-HEAD EDITING
+                    </h3>
+
+                    <p>
+                        CLEAN CUTS / PACING / RETENTION
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 03 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        MOTION
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        MOTION GRAPHICS
+                    </h3>
+
+                    <p>
+                        TEXT ANIMATION / TRANSITIONS / VISUALS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 04 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        ANIMATION
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        AFTER EFFECTS ANIMATION
+                    </h3>
+
+                    <p>
+                        2D ANIMATION / KINETIC TYPE / EFFECTS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 05 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    05
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        STORY
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        STORYTELLING & PACING
+                    </h3>
+
+                    <p>
+                        RAW FOOTAGE / NARRATIVE / ENGAGEMENT
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 06 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    06
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        SOUND
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        SOUND DESIGN
+                    </h3>
+
+                    <p>
+                        SFX / AMBIENCE / MUSIC / AUDIO
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 07 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    07
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        COLOR
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        COLOR CORRECTION & GRADING
+                    </h3>
+
+                    <p>
+                        CLEAN / CONSISTENT / CINEMATIC LOOKS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 08 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    08
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        B-ROLL
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        B-ROLL & VISUAL STORYTELLING
+                    </h3>
+
+                    <p>
+                        FOOTAGE / OVERLAYS / VISUAL SEQUENCES
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 09 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    09
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        CAPTIONS
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        CAPTIONS & TYPOGRAPHY
+                    </h3>
+
+                    <p>
+                        DYNAMIC SUBTITLES / ON-SCREEN TEXT
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 10 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    10
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        CHROMA KEY
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        GREEN SCREEN / CHROMA KEY
+                    </h3>
+
+                    <p>
+                        SUBJECT ISOLATION / COMPOSITING
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 11 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    11
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        DOCUMENTARY
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        DOCUMENTARY-STYLE EDITING
+                    </h3>
+
+                    <p>
+                        RESEARCH / TIMELINES / NARRATION
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 12 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    12
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        COMMERCIAL
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        COMMERCIAL / AD EDITING
+                    </h3>
+
+                    <p>
+                        PRODUCT / BRAND / CONVERSION
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 13 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    13
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        SOCIAL
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        SOCIAL MEDIA OPTIMIZATION
+                    </h3>
+
+                    <p>
+                        9:16 / 1:1 / 16:9 FORMATS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 14 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    14
+                </div>
+
+                <div class="project-media">
+
+                    <div class="project-placeholder">
+                        DESIGN
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        GRAPHIC DESIGN
+                    </h3>
+
+                    <p>
+                        PHOTOSHOP / ILLUSTRATOR / CUSTOM VISUALS
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PROCESS
+    ================================================== -->
+
+    <section
+        class="process section"
+        id="process"
+    >
+
+        <div class="section-number">
+            03
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                HOW I WORK
+            </p>
+
+
+            <h2>
+
+                RAW
+
+                <span>→</span>
+
+                FINAL
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    01
+                </div>
+
+                <h3>
+                    RAW FOOTAGE
+                </h3>
+
+                <p>
+                    Understanding the footage,
+                    story and creative direction.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    02
+                </div>
+
+                <h3>
+                    THE EDIT
+                </h3>
+
+                <p>
+                    Cutting, pacing, transitions,
+                    sound design and motion.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    03
+                </div>
+
+                <h3>
+                    FINAL FRAME
+                </h3>
+
+                <p>
+                    Color, sound and finishing
+                    touches that complete the story.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         TOOLS
+    ================================================== -->
+
+    <section class="services section">
+
+
+        <div class="section-number">
+            04
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                WHAT I USE
+            </p>
+
+
+            <h2>
+
+                MY
+
+                <span>TOOLS</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="tools">
+
+
+            <div class="tool">
+                PREMIERE PRO
+            </div>
+
+
+            <div class="tool">
+                AFTER EFFECTS
+            </div>
+
+
+            <div class="tool">
+                DAVINCI
+            </div>
+
+
+            <div class="tool">
+                PHOTOSHOP
+            </div>
+
+
+            <div class="tool">
+                CAPCUT
+            </div>
+
+
+            <div class="tool">
+                ILLUSTRATOR
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CONTACT
+    ================================================== -->
+
+    <section
+        class="contact section"
+        id="contact"
+    >
+
+        <div class="contact-top">
+
+            <p class="small-title">
+                GOT A PROJECT?
+            </p>
+
+
+            <h2>
+
+                LET'S MAKE
+
+                <br>
+
+                SOMETHING
+
+                <br>
+
+                <span>WORTH WATCHING.</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <!-- CLIENT EMAIL -->
+
+        <a
+            href="mailto:createsmanthan@gmail.com"
+            class="contact-button"
+        >
+
+            START A PROJECT →
+
+        </a>
+
+
+
+        <div class="contact-footer">
+
+
+            <span>
+                © 2026 FRAME/
+            </span>
+
+
+            <span>
+                INSTAGRAM
+            </span>
+
+
+            <a
+                href="mailto:createsmanthan@gmail.com"
+            >
+                EMAIL
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
 
     <script src="script.js"></script>
+
 
 </body>
 
