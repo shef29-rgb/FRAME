@@ -144,7 +144,7 @@ if (
 
 
 /* =====================================================
-   PROJECT PLACEHOLDER CLICK
+   PROJECT CARD CLICK
 ===================================================== */
 
 const projectCards =
@@ -160,7 +160,7 @@ projectCards.forEach(project => {
         () => {
 
             console.log(
-                "Project selected."
+                "Editing service selected."
             );
 
         }
@@ -188,3 +188,8 @@ window.addEventListener(
 
     }
 );
+
+                                
+
+        
+            
