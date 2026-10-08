@@ -32,8 +32,6 @@ if (menuButton && navLinks) {
     );
 
 
-    /* Close menu when a link is clicked */
-
     const links =
         navLinks.querySelectorAll("a");
 
@@ -188,3 +186,63 @@ window.addEventListener(
 
     }
 );
+
+
+
+/* =====================================================
+   SHOWREEL PLAY OVERLAY
+===================================================== */
+
+const showreelVideo =
+    document.querySelector(
+        ".showreel-image"
+    );
+
+
+const showreelFrame =
+    document.querySelector(
+        ".showreel-frame"
+    );
+
+
+if (
+    showreelVideo &&
+    showreelFrame
+) {
+
+    showreelVideo.addEventListener(
+        "play",
+        () => {
+
+            showreelFrame.classList.add(
+                "playing"
+            );
+
+        }
+    );
+
+
+    showreelVideo.addEventListener(
+        "pause",
+        () => {
+
+            showreelFrame.classList.remove(
+                "playing"
+            );
+
+        }
+    );
+
+
+    showreelVideo.addEventListener(
+        "ended",
+        () => {
+
+            showreelFrame.classList.remove(
+                "playing"
+            );
+
+        }
+    );
+
+}
