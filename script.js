@@ -142,29 +142,461 @@ if (
 
 
 /* =====================================================
-   PROJECT CARD CLICK
+   VIDEO CATEGORY DATA
 ===================================================== */
 
-const projectCards =
+/*
+    CHANGE ONLY THE VIDEO FILENAMES HERE.
+
+    Keep the category names and titles.
+
+    Example:
+
+    src: "my-real-video.mp4"
+
+    If your videos are inside a folder called videos:
+
+    src: "videos/my-real-video.mp4"
+*/
+
+
+const videoCategories = {
+
+    "short-form": {
+
+        title: "SHORT-FORM VIDEOS",
+
+        videos: [
+
+            {
+                title: "HOOK-DRIVEN INSIGHT SHORT",
+                src: "short-hook.mp4"
+            },
+
+            {
+                title: "STORY-ARC SHORT",
+                src: "short-story.mp4"
+            },
+
+            {
+                title: "CONTROVERSIAL SOUNDBITE SHORT",
+                src: "short-soundbite.mp4"
+            },
+
+            {
+                title: "LISTICLE / QUICK-TIP SHORT",
+                src: "short-listicle.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "long-form": {
+
+        title: "LONG-FORM VIDEOS",
+
+        videos: [
+
+            {
+                title: "TALKING-HEAD TUTORIAL / EXPLAINER",
+                src: "long-tutorial.mp4"
+            },
+
+            {
+                title: "PODCAST / INTERVIEW FULL EPISODE EDIT",
+                src: "long-podcast.mp4"
+            },
+
+            {
+                title: "PRODUCT / SAAS WALKTHROUGH",
+                src: "long-product.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "documentary": {
+
+        title: "DOCUMENTARY EDITS",
+
+        videos: [
+
+            {
+                title: "SHORT DOCUMENTARY-STYLE PROFILE",
+                src: "documentary-profile.mp4"
+            },
+
+            {
+                title: "ISSUE / TOPIC MINI-DOCUMENTARY",
+                src: "documentary-topic.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "motion": {
+
+        title: "MOTION GRAPHICS EDITS",
+
+        videos: [
+
+            {
+                title: "EXPLAINER WITH ANIMATED GRAPHICS",
+                src: "motion-explainer.mp4"
+            },
+
+            {
+                title: "LOWER-THIRDS AND TITLE SEQUENCE PACK",
+                src: "motion-titles.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "color": {
+
+        title: "COLOR GRADING",
+
+        videos: [
+
+            {
+                title: "BEFORE / AFTER FLAT-TO-CINEMATIC GRADE",
+                src: "color-cinematic.mp4"
+            },
+
+            {
+                title: "SKIN-TONE CONSISTENCY REEL",
+                src: "color-skin.mp4"
+            },
+
+            {
+                title: "MOOD-BASED GRADE COMPARISON",
+                src: "color-mood.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "sound": {
+
+        title: "SOUND DESIGN",
+
+        videos: [
+
+            {
+                title: "DIALOGUE CLEANUP + MUSIC BED",
+                src: "sound-dialogue.mp4"
+            },
+
+            {
+                title: "SFX-DRIVEN SHORT-FORM EDIT",
+                src: "sound-sfx.mp4"
+            },
+
+            {
+                title: "FULL AMBIENT + MUSIC MIX",
+                src: "sound-ambient.mp4"
+            }
+
+        ]
+
+    },
+
+
+    "after-effects": {
+
+        title: "AFTER EFFECTS ANIMATION",
+
+        videos: [
+
+            {
+                title: "KINETIC TYPOGRAPHY",
+                src: "aftereffects-kinetic.mp4"
+            },
+
+            {
+                title: "2D ANIMATION",
+                src: "aftereffects-2d.mp4"
+            }
+
+        ]
+
+    }
+
+};
+
+
+
+/* =====================================================
+   VIDEO SHOWCASE
+===================================================== */
+
+const categoryCards =
     document.querySelectorAll(
-        ".project"
+        ".video-category"
     );
 
 
-projectCards.forEach(project => {
+const videoShowcase =
+    document.getElementById(
+        "videoShowcase"
+    );
 
-    project.addEventListener(
+
+const videoGrid =
+    document.getElementById(
+        "videoGrid"
+    );
+
+
+const showcaseTitle =
+    document.getElementById(
+        "showcaseTitle"
+    );
+
+
+const showcaseClose =
+    document.getElementById(
+        "videoShowcaseClose"
+    );
+
+
+const showcaseBackdrop =
+    document.querySelector(
+        ".video-showcase-backdrop"
+    );
+
+
+
+function openVideoShowcase(categoryKey) {
+
+    if (
+        !videoShowcase ||
+        !videoGrid ||
+        !showcaseTitle
+    ) {
+
+        return;
+
+    }
+
+
+    const category =
+        videoCategories[categoryKey];
+
+
+    if (!category) {
+
+        return;
+
+    }
+
+
+    showcaseTitle.textContent =
+        category.title;
+
+
+    videoGrid.innerHTML = "";
+
+
+    category.videos.forEach(
+        (videoItem, index) => {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "showcase-video-card";
+
+
+            card.innerHTML = `
+
+                <div class="showcase-video-number">
+                    ${String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div class="showcase-video-frame">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="${videoItem.src}"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+                <h3>
+                    ${videoItem.title}
+                </h3>
+
+            `;
+
+
+            videoGrid.appendChild(card);
+
+        }
+    );
+
+
+    videoShowcase.classList.add(
+        "showcase-open"
+    );
+
+
+    videoShowcase.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "showcase-lock"
+    );
+
+
+    setTimeout(() => {
+
+        const firstVideo =
+            videoGrid.querySelector(
+                "video"
+            );
+
+        if (firstVideo) {
+
+            firstVideo.focus();
+
+        }
+
+    }, 100);
+
+}
+
+
+
+function closeVideoShowcase() {
+
+    if (!videoShowcase) {
+
+        return;
+
+    }
+
+
+    const videos =
+        videoShowcase.querySelectorAll(
+            "video"
+        );
+
+
+    videos.forEach(video => {
+
+        video.pause();
+
+        video.currentTime = 0;
+
+    });
+
+
+    videoShowcase.classList.remove(
+        "showcase-open"
+    );
+
+
+    videoShowcase.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "showcase-lock"
+    );
+
+}
+
+
+
+categoryCards.forEach(card => {
+
+    card.addEventListener(
         "click",
         () => {
 
-            console.log(
-                "Editing service selected."
+            const categoryKey =
+                card.dataset.category;
+
+
+            openVideoShowcase(
+                categoryKey
             );
 
         }
     );
 
 });
+
+
+
+if (showcaseClose) {
+
+    showcaseClose.addEventListener(
+        "click",
+        closeVideoShowcase
+    );
+
+}
+
+
+if (showcaseBackdrop) {
+
+    showcaseBackdrop.addEventListener(
+        "click",
+        closeVideoShowcase
+    );
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            videoShowcase &&
+            videoShowcase.classList.contains(
+                "showcase-open"
+            )
+        ) {
+
+            closeVideoShowcase();
+
+        }
+
+    }
+);
 
 
 
@@ -190,7 +622,7 @@ window.addEventListener(
 
 
 /* =====================================================
-   SHOWREEL PLAY OVERLAY
+   HERO SHOWREEL
 ===================================================== */
 
 const showreelVideo =
