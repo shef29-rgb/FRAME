@@ -1,660 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>FRAME/ — Video Editor Portfolio</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta
-    name="description"
-    content="FRAME/ — Video Editor & Visual Storyteller"
->
-
-<title>FRAME/ — Video Editor</title>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-
-<link rel="stylesheet" href="style.css">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<header class="site-header">
 
-<nav class="navbar">
+    <div class="container nav-container">
 
-<a href="#home" class="logo">
-FRAME<span>/</span>
-</a>
+        <a href="#home" class="logo">
+            FRAME<span>/</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav">
+
+            <a href="#home" class="nav-link active">
+                HOME
+            </a>
+
+            <a href="#about" class="nav-link">
+                ABOUT
+            </a>
+
+            <a href="#work" class="nav-link">
+                WORK
+            </a>
+
+            <a href="#process" class="nav-link">
+                PROCESS
+            </a>
+
+            <a href="#tools" class="nav-link">
+                TOOLS
+            </a>
+
+            <a href="#contact" class="nav-link">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
 
 
-<div class="nav-links">
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
-<a href="#home">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#work">WORK</a>
-<a href="#process">PROCESS</a>
-<a href="#contact">CONTACT</a>
-
-</div>
+<main>
 
 
-<button
-    class="menu-btn"
-    aria-label="Open navigation menu"
->
-
-<span></span>
-<span></span>
-
-</button>
-
-</nav>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
-<section class="hero" id="home">
+<section id="home" class="hero section">
 
-<div class="hero-halftone"></div>
+    <div class="container hero-container">
 
+        <div class="hero-copy">
 
-<div class="hero-content">
+            <div class="hero-label">
+                VIDEO EDITOR / CREATIVE STORYTELLER
+            </div>
 
-<div class="comic-label">
+            <h1 class="hero-title">
+                I CUT.
+                <br>
+                I CREATE.
+                <br>
+                <span>YOU REMEMBER.</span>
+            </h1>
 
-<span>●</span>
+            <p class="hero-description">
+                Turning raw footage into stories people
+                actually want to watch.
+            </p>
 
-REC / 001
+            <a href="#work" class="hero-button">
+                VIEW MY WORK
+                <span>→</span>
+            </a>
 
-</div>
-
-
-<h1>
-
-I CUT.
-
-<br>
-
-<span>I CREATE.</span>
-
-<br>
-
-YOU REMEMBER.
-
-</h1>
-
-
-<p class="hero-description">
-
-VIDEO EDITOR & VISUAL STORYTELLER
-
-</p>
+        </div>
 
 
-<div class="hero-buttons">
+        <!-- HERO SHOWREEL -->
 
-<a
-    href="#work"
-    class="btn btn-primary"
->
+        <div class="showreel-frame">
 
-VIEW MY WORK
+            <div class="showreel-label">
+                SHOWREEL / 2026
+            </div>
 
-</a>
+            <video
+                class="showreel-image"
+                controls
+                preload="metadata"
+                playsinline
+            >
+                <source src="Showreel.mp4" type="video/mp4">
 
+                Your browser does not support the video tag.
+            </video>
 
-<a
-    href="#contact"
-    class="btn btn-outline"
->
+            <div class="play-overlay">
+                <div class="play-button">
+                    ▶
+                </div>
+            </div>
 
-LET'S TALK
+        </div>
 
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-     HERO SHOWREEL
-===================================================== -->
-
-<div class="showreel-wrapper">
-
-<div class="showreel-tag">
-
-SHOWREEL
-
-</div>
-
-
-<div class="showreel-frame">
-
-<video
-    class="showreel-image"
-    controls
-    preload="metadata"
-    playsinline
->
-
-<source
-    src="Showreel.mp4"
-    type="video/mp4"
->
-
-Your browser does not support the video tag.
-
-</video>
-
-
-<div class="play-overlay">
-
-<div class="play-button">
-
-▶
-
-</div>
-
-</div>
-
-
-<div class="video-time">
-
-SHOWREEL / 001
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="hero-bottom">
-
-<span>VIDEO EDITOR</span>
-<span>•</span>
-<span>FILMMAKER</span>
-<span>•</span>
-<span>STORYTELLER</span>
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-===================================================== -->
+========================================================= -->
 
-<section
-    class="about section"
-    id="about"
->
+<section id="about" class="about section">
 
-<div class="section-number">
+    <div class="container">
 
-01
+        <div class="section-heading">
 
-</div>
+            <div class="section-number">
+                01
+            </div>
 
+            <h2>
+                ABOUT
+            </h2>
 
-<div class="about-title">
-
-<p class="small-title">
-
-MEET THE EDITOR
-
-</p>
+        </div>
 
 
-<h2>
+        <div class="about-grid">
 
-BEHIND
+            <div class="about-video-frame">
 
-<br>
+                <video
+                    class="about-video"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="Intro.mp4" type="video/mp4">
 
-THE <span>EDIT.</span>
+                    Your browser does not support the video tag.
+                </video>
 
-</h2>
-
-</div>
-
-
-<div class="about-image">
-
-<video
-    class="about-video"
-    controls
-    preload="metadata"
-    playsinline
->
-
-<source
-    src="Intro.mp4"
-    type="video/mp4"
->
-
-Your browser does not support the video tag.
-
-</video>
+            </div>
 
 
-<div class="image-label">
+            <div class="about-content">
 
-EDITOR / 001
+                <div class="about-tag">
+                    BEHIND THE FRAME
+                </div>
 
-</div>
+                <h3>
+                    EVERY CUT
+                    <br>
+                    HAS A PURPOSE.
+                </h3>
 
-</div>
+                <p>
+                    I’m a video editor focused on turning raw footage
+                    into engaging, memorable visual stories.
+                </p>
 
+                <p>
+                    From short-form social content to long-form
+                    storytelling, documentaries, motion graphics,
+                    colour grading and sound design — every frame
+                    is edited with intention.
+                </p>
 
-<div class="about-text">
+                <div class="about-stats">
 
-<p>
+                    <div class="stat">
+                        <strong>07</strong>
+                        <span>EDITING DOMAINS</span>
+                    </div>
 
-I'm a video editor focused on turning raw footage into visuals that people actually remember.
+                    <div class="stat">
+                        <strong>20+</strong>
+                        <span>VIDEO STYLES</span>
+                    </div>
 
-</p>
+                    <div class="stat">
+                        <strong>01</strong>
+                        <span>VISUAL LANGUAGE</span>
+                    </div>
 
+                </div>
 
-<p>
+            </div>
 
-From cinematic storytelling to fast-paced social content, every cut has a purpose.
+        </div>
 
-</p>
-
-
-<a
-    href="#contact"
-    class="text-link"
->
-
-WORK WITH ME →
-
-</a>
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     MY EDITING ARSENAL
-===================================================== -->
+<!-- =========================================================
+     WORK
+========================================================= -->
 
-<section
-    class="work section"
-    id="work"
->
+<section id="work" class="work section">
 
-<div class="section-number">
+    <div class="container">
 
-02
+        <div class="section-heading">
 
-</div>
+            <div class="section-number">
+                02
+            </div>
 
+            <h2>
+                SELECTED WORK
+            </h2>
 
-<div class="section-heading">
+        </div>
 
-<p class="small-title">
 
-WHAT I DO
+        <div class="work-intro">
 
-</p>
+            <p>
+                Seven editing worlds.
+                Click a category to explore the work.
+            </p>
 
+        </div>
 
-<h2>
 
-MY EDITING
+        <!-- =================================================
+             CATEGORY CARDS
+        ================================================== -->
 
-<span>ARSENAL</span>
+        <div class="projects-grid">
 
-</h2>
 
-</div>
+            <!-- 01 SHORT FORM -->
 
+            <article
+                class="project"
+                data-category="shortForm"
+            >
 
+                <div class="project-number">
+                    01
+                </div>
 
-<div class="projects">
+                <div class="project-content">
 
+                    <div class="project-top">
 
-<!-- =====================================================
-     01 — SHORT-FORM VIDEOS
-===================================================== -->
+                        <span class="project-type">
+                            EDITING
+                        </span>
 
-<article
-    class="project video-category"
-    data-category="short-form"
->
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
-<div class="project-number">
+                    </div>
 
-01
+                    <h3>
+                        SHORT-FORM
+                        <br>
+                        VIDEOS
+                    </h3>
 
-</div>
+                    <p>
+                        Fast-paced edits built around
+                        hooks, storytelling and retention.
+                    </p>
 
+                </div>
 
-<div class="project-media">
+                <div class="project-footer">
 
-<div class="project-placeholder">
+                    <span>
+                        04 VIDEO PROJECTS
+                    </span>
 
-SHORT-FORM
+                    <span>
+                        EXPLORE →
+                    </span>
 
-<span>CLICK TO WATCH →</span>
+                </div>
 
-</div>
+            </article>
 
-</div>
 
 
-<div class="project-info">
+            <!-- 02 LONG FORM -->
 
-<h3>
+            <article
+                class="project"
+                data-category="longForm"
+            >
 
-SHORT-FORM VIDEOS
+                <div class="project-number">
+                    02
+                </div>
 
-</h3>
+                <div class="project-content">
 
-</div>
+                    <div class="project-top">
 
-</article>
+                        <span class="project-type">
+                            EDITING
+                        </span>
 
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
+                    </div>
 
-<!-- =====================================================
-     02 — LONG-FORM VIDEOS
-===================================================== -->
+                    <h3>
+                        LONG-FORM
+                        <br>
+                        VIDEOS
+                    </h3>
 
-<article
-    class="project video-category"
-    data-category="long-form"
->
+                    <p>
+                        Structured long-form edits designed
+                        to keep stories moving.
+                    </p>
 
-<div class="project-number">
+                </div>
 
-02
+                <div class="project-footer">
 
-</div>
+                    <span>
+                        03 VIDEO PROJECTS
+                    </span>
 
+                    <span>
+                        EXPLORE →
+                    </span>
 
-<div class="project-media">
+                </div>
 
-<div class="project-placeholder">
+            </article>
 
-LONG-FORM
 
-<span>CLICK TO WATCH →</span>
 
-</div>
+            <!-- 03 DOCUMENTARY -->
 
-</div>
+            <article
+                class="project"
+                data-category="documentary"
+            >
 
+                <div class="project-number">
+                    03
+                </div>
 
-<div class="project-info">
+                <div class="project-content">
 
-<h3>
+                    <div class="project-top">
 
-LONG-FORM VIDEOS
+                        <span class="project-type">
+                            STORYTELLING
+                        </span>
 
-</h3>
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
-</div>
+                    </div>
 
-</article>
+                    <h3>
+                        DOCUMENTARY
+                        <br>
+                        EDITS
+                    </h3>
 
+                    <p>
+                        Character-driven and topic-focused
+                        documentary storytelling.
+                    </p>
 
+                </div>
 
-<!-- =====================================================
-     03 — DOCUMENTARY EDITS
-===================================================== -->
+                <div class="project-footer">
 
-<article
-    class="project video-category"
-    data-category="documentary"
->
+                    <span>
+                        02 VIDEO PROJECTS
+                    </span>
 
-<div class="project-number">
+                    <span>
+                        EXPLORE →
+                    </span>
 
-03
+                </div>
 
-</div>
+            </article>
 
 
-<div class="project-media">
 
-<div class="project-placeholder">
+            <!-- 04 MOTION GRAPHICS -->
 
-DOCUMENTARY
+            <article
+                class="project"
+                data-category="motionGraphics"
+            >
 
-<span>CLICK TO WATCH →</span>
+                <div class="project-number">
+                    04
+                </div>
 
-</div>
+                <div class="project-content">
 
-</div>
+                    <div class="project-top">
 
+                        <span class="project-type">
+                            MOTION
+                        </span>
 
-<div class="project-info">
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
-<h3>
+                    </div>
 
-DOCUMENTARY EDITS
+                    <h3>
+                        MOTION
+                        <br>
+                        GRAPHICS
+                    </h3>
 
-</h3>
+                    <p>
+                        Animated graphics, explainers,
+                        titles and visual systems.
+                    </p>
 
-</div>
+                </div>
 
-</article>
+                <div class="project-footer">
 
+                    <span>
+                        02 VIDEO PROJECTS
+                    </span>
 
+                    <span>
+                        EXPLORE →
+                    </span>
 
-<!-- =====================================================
-     04 — MOTION GRAPHICS EDITS
-===================================================== -->
+                </div>
 
-<article
-    class="project video-category"
-    data-category="motion"
->
+            </article>
 
-<div class="project-number">
 
-04
 
-</div>
+            <!-- 05 COLOR GRADING -->
 
+            <article
+                class="project"
+                data-category="colorGrading"
+            >
 
-<div class="project-media">
+                <div class="project-number">
+                    05
+                </div>
 
-<div class="project-placeholder">
+                <div class="project-content">
 
-MOTION
+                    <div class="project-top">
 
-<span>CLICK TO WATCH →</span>
+                        <span class="project-type">
+                            COLOUR
+                        </span>
 
-</div>
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
-</div>
+                    </div>
 
+                    <h3>
+                        COLOR
+                        <br>
+                        GRADING
+                    </h3>
 
-<div class="project-info">
+                    <p>
+                        Cinematic colour, skin tones
+                        and mood-based visual grades.
+                    </p>
 
-<h3>
+                </div>
 
-MOTION GRAPHICS EDITS
+                <div class="project-footer">
 
-</h3>
+                    <span>
+                        03 VIDEO PROJECTS
+                    </span>
 
-</div>
+                    <span>
+                        EXPLORE →
+                    </span>
 
-</article>
+                </div>
 
+            </article>
 
 
-<!-- =====================================================
-     05 — COLOR GRADING
-===================================================== -->
 
-<article
-    class="project video-category"
-    data-category="color"
->
+            <!-- 06 SOUND DESIGN -->
 
-<div class="project-number">
+            <article
+                class="project"
+                data-category="soundDesign"
+            >
 
-05
+                <div class="project-number">
+                    06
+                </div>
 
-</div>
+                <div class="project-content">
 
+                    <div class="project-top">
 
-<div class="project-media">
+                        <span class="project-type">
+                            AUDIO
+                        </span>
 
-<div class="project-placeholder">
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
-COLOR
+                    </div>
 
-<span>CLICK TO WATCH →</span>
+                    <h3>
+                        SOUND
+                        <br>
+                        DESIGN
+                    </h3>
 
-</div>
+                    <p>
+                        Dialogue, music, ambience and
+                        sound effects working together.
+                    </p>
 
-</div>
+                </div>
 
+                <div class="project-footer">
 
-<div class="project-info">
+                    <span>
+                        03 VIDEO PROJECTS
+                    </span>
 
-<h3>
+                    <span>
+                        EXPLORE →
+                    </span>
 
-COLOR GRADING
+                </div>
 
-</h3>
+            </article>
 
-</div>
 
-</article>
 
+            <!-- 07 AFTER EFFECTS -->
 
+            <article
+                class="project"
+                data-category="afterEffects"
+            >
 
-<!-- =====================================================
-     06 — SOUND DESIGN
-===================================================== -->
+                <div class="project-number">
+                    07
+                </div>
 
-<article
-    class="project video-category"
-    data-category="sound"
->
+                <div class="project-content">
 
-<div class="project-number">
+                    <div class="project-top">
 
-06
+                        <span class="project-type">
+                            ANIMATION
+                        </span>
 
-</div>
+                        <span class="project-arrow">
+                            ↗
+                        </span>
 
+                    </div>
 
-<div class="project-media">
+                    <h3>
+                        AFTER EFFECTS
+                        <br>
+                        ANIMATION
+                    </h3>
 
-<div class="project-placeholder">
+                    <p>
+                        Kinetic typography and 2D animation
+                        designed for visual impact.
+                    </p>
 
-SOUND
+                </div>
 
-<span>CLICK TO WATCH →</span>
+                <div class="project-footer">
 
-</div>
+                    <span>
+                        02 VIDEO PROJECTS
+                    </span>
 
-</div>
+                    <span>
+                        EXPLORE →
+                    </span>
 
+                </div>
 
-<div class="project-info">
+            </article>
 
-<h3>
+        </div>
 
-SOUND DESIGN
-
-</h3>
-
-</div>
-
-</article>
-
-
-
-<!-- =====================================================
-     07 — AFTER EFFECTS ANIMATION
-===================================================== -->
-
-<article
-    class="project video-category"
-    data-category="after-effects"
->
-
-<div class="project-number">
-
-07
-
-</div>
-
-
-<div class="project-media">
-
-<div class="project-placeholder">
-
-AFTER EFFECTS
-
-<span>CLICK TO WATCH →</span>
-
-</div>
-
-</div>
-
-
-<div class="project-info">
-
-<h3>
-
-AFTER EFFECTS ANIMATION
-
-</h3>
-
-</div>
-
-</article>
-
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     VIDEO CATEGORY SHOWCASE
-===================================================== -->
+<!-- =========================================================
+     VIDEO SHOWCASE
+========================================================= -->
 
 <div
     class="video-showcase"
@@ -662,313 +667,343 @@ AFTER EFFECTS ANIMATION
     aria-hidden="true"
 >
 
-<div class="video-showcase-backdrop"></div>
+    <div class="video-showcase-backdrop"></div>
 
 
-<div class="video-showcase-panel">
+    <div class="video-showcase-panel">
 
-<button
-    class="video-showcase-close"
-    id="videoShowcaseClose"
-    aria-label="Close video showcase"
->
+        <div class="video-showcase-header">
 
-×
+            <div>
 
-</button>
+                <div class="showcase-label">
+                    FRAME / SELECTED WORK
+                </div>
 
+                <h2 id="showcaseTitle">
+                    SHORT-FORM VIDEOS
+                </h2>
 
-<div class="video-showcase-header">
-
-<p class="small-title">
-FRAME / SHOWCASE
-</p>
+            </div>
 
 
-<h2 id="showcaseTitle">
+            <button
+                class="showcase-close"
+                id="showcaseClose"
+                aria-label="Close showcase"
+            >
+                ×
+            </button>
 
-VIDEOS
+        </div>
 
-</h2>
+
+        <div
+            class="video-grid"
+            id="videoGrid"
+        >
+
+            <!--
+                JavaScript will insert the video cards here.
+            -->
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<div
-    class="video-grid"
-    id="videoGrid"
->
 
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      PROCESS
-===================================================== -->
+========================================================= -->
 
-<section
-    class="process section"
-    id="process"
->
+<section id="process" class="process section">
 
-<div class="section-number">
+    <div class="container">
 
-03
+        <div class="section-heading">
 
-</div>
+            <div class="section-number">
+                03
+            </div>
 
+            <h2>
+                PROCESS
+            </h2>
 
-<div class="section-heading">
-
-<p class="small-title">
-
-HOW I WORK
-
-</p>
+        </div>
 
 
-<h2>
-
-RAW
-
-<span>→</span>
-
-FINAL
-
-</h2>
-
-</div>
+        <div class="process-grid">
 
 
+            <div class="process-card">
 
-<div class="process-grid">
+                <span class="process-number">
+                    01
+                </span>
 
+                <h3>
+                    RAW
+                </h3>
 
-<div class="process-card">
+                <p>
+                    Understanding the footage,
+                    story and objective.
+                </p>
 
-<div class="process-icon">
-
-01
-
-</div>
-
-<h3>
-
-RAW FOOTAGE
-
-</h3>
-
-<p>
-
-Understanding the footage, story and creative direction.
-
-</p>
-
-</div>
+            </div>
 
 
+            <div class="process-card">
 
-<div class="process-card">
+                <span class="process-number">
+                    02
+                </span>
 
-<div class="process-icon">
+                <h3>
+                    CUT
+                </h3>
 
-02
+                <p>
+                    Finding the strongest moments
+                    and building the structure.
+                </p>
 
-</div>
-
-<h3>
-
-THE EDIT
-
-</h3>
-
-<p>
-
-Cutting, pacing, transitions, sound design and motion.
-
-</p>
-
-</div>
+            </div>
 
 
+            <div class="process-card">
 
-<div class="process-card">
+                <span class="process-number">
+                    03
+                </span>
 
-<div class="process-icon">
+                <h3>
+                    BUILD
+                </h3>
 
-03
+                <p>
+                    Adding motion, graphics,
+                    sound and visual rhythm.
+                </p>
 
-</div>
-
-<h3>
-
-FINAL FRAME
-
-</h3>
-
-<p>
-
-Color, sound and finishing touches that complete the story.
-
-</p>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="process-card">
+
+                <span class="process-number">
+                    04
+                </span>
+
+                <h3>
+                    POLISH
+                </h3>
+
+                <p>
+                    Colour, sound and final
+                    details bring everything together.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <span class="process-number">
+                    05
+                </span>
+
+                <h3>
+                    DELIVER
+                </h3>
+
+                <p>
+                    Final export optimized for
+                    the platform and audience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      TOOLS
-===================================================== -->
+========================================================= -->
 
-<section class="services section">
+<section id="tools" class="tools section">
 
-<div class="section-number">
+    <div class="container">
 
-04
+        <div class="section-heading">
 
-</div>
+            <div class="section-number">
+                04
+            </div>
 
+            <h2>
+                TOOLS
+            </h2>
 
-<div class="section-heading">
-
-<p class="small-title">
-
-WHAT I USE
-
-</p>
-
-
-<h2>
-
-MY
-
-<span>TOOLS</span>
-
-</h2>
-
-</div>
+        </div>
 
 
+        <div class="tools-grid">
 
-<div class="tools">
+            <div class="tool-card">
+                <span>01</span>
+                <h3>PREMIERE PRO</h3>
+            </div>
 
-<div class="tool">
-PREMIERE PRO
-</div>
+            <div class="tool-card">
+                <span>02</span>
+                <h3>AFTER EFFECTS</h3>
+            </div>
 
-<div class="tool">
-AFTER EFFECTS
-</div>
+            <div class="tool-card">
+                <span>03</span>
+                <h3>DAVINCI RESOLVE</h3>
+            </div>
 
-<div class="tool">
-DAVINCI
-</div>
+            <div class="tool-card">
+                <span>04</span>
+                <h3>PHOTOSHOP</h3>
+            </div>
 
-<div class="tool">
-PHOTOSHOP
-</div>
+            <div class="tool-card">
+                <span>05</span>
+                <h3>CAPCUT</h3>
+            </div>
 
-<div class="tool">
-CAPCUT
-</div>
+            <div class="tool-card">
+                <span>06</span>
+                <h3>MOTION DESIGN</h3>
+            </div>
 
-<div class="tool">
-ILLUSTRATOR
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      CONTACT
-===================================================== -->
+========================================================= -->
 
-<section
-    class="contact section"
-    id="contact"
->
+<section id="contact" class="contact section">
 
-<div class="contact-top">
+    <div class="container contact-container">
 
-<p class="small-title">
+        <div class="section-heading">
 
-GOT A PROJECT?
+            <div class="section-number">
+                05
+            </div>
 
-</p>
+            <h2>
+                LET'S CREATE
+            </h2>
 
-
-<h2>
-
-LET'S MAKE
-
-<br>
-
-SOMETHING
-
-<br>
-
-<span>WORTH WATCHING.</span>
-
-</h2>
-
-</div>
+        </div>
 
 
-<a
-    href="mailto:Createsmanthan@gmail.com"
-    class="contact-button"
->
+        <div class="contact-content">
 
-START A PROJECT →
+            <h3>
+                HAVE A STORY
+                <br>
+                <span>TO TELL?</span>
+            </h3>
 
-</a>
-
-
-<div class="contact-footer">
-
-<span>
-
-© 2026 FRAME/
-
-</span>
+            <p>
+                Let's turn your footage into something
+                people remember.
+            </p>
 
 
-<span>
+            <a
+                href="mailto:Createsmanthan@gmail.com"
+                class="contact-button"
+            >
+                GET IN TOUCH
+                <span>→</span>
+            </a>
 
-◎ INSTAGRAM
+        </div>
 
-</span>
-
-
-<a
-    href="mailto:Createsmanthan@gmail.com"
->
-
-✉ EMAIL
-
-</a>
-
-</div>
+    </div>
 
 </section>
 
 
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-container">
+
+        <div class="footer-logo">
+            FRAME<span>/</span>
+        </div>
+
+
+        <div class="footer-links">
+
+            <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="footer-icon">◎</span>
+                INSTAGRAM
+            </a>
+
+
+            <a href="mailto:Createsmanthan@gmail.com">
+
+                <span class="footer-icon">✉</span>
+
+                EMAIL
+
+            </a>
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 FRAME/ — ALL RIGHTS RESERVED.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
