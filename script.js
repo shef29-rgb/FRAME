@@ -1,680 +1,384 @@
-/* =====================================================
-   FRAME/ — JAVASCRIPT
-===================================================== */
-
 
 /* =====================================================
-   MOBILE NAVIGATION
+   FRAME/ — PORTFOLIO INTERACTIONS
 ===================================================== */
 
-const menuButton =
-    document.querySelector(".menu-btn");
-
-const navLinks =
-    document.querySelector(".nav-links");
-
+/* MOBILE NAVIGATION */
+const menuButton = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
 if (menuButton && navLinks) {
+    menuButton.setAttribute("aria-expanded", "false");
 
-    menuButton.addEventListener(
-        "click",
-        () => {
+    menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("mobile-active");
 
-            navLinks.classList.toggle(
-                "mobile-active"
-            );
-
-            menuButton.classList.toggle(
-                "active"
-            );
-
-        }
-    );
-
-
-    const links =
-        navLinks.querySelectorAll("a");
-
-
-    links.forEach(link => {
-
-        link.addEventListener(
-            "click",
-            () => {
-
-                navLinks.classList.remove(
-                    "mobile-active"
-                );
-
-                menuButton.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
+        menuButton.classList.toggle("active", isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
     });
 
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("mobile-active");
+            menuButton.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+        });
+    });
 }
 
 
-
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-
-const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
-
+/* ACTIVE NAVIGATION LINK */
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
 
 if (
     sections.length &&
-    navigationLinks.length
+    navigationLinks.length &&
+    "IntersectionObserver" in window
 ) {
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
 
-    const sectionObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        const currentId =
-                            entry.target.id;
-
-
-                        navigationLinks.forEach(
-                            link => {
-
-                                link.classList.remove(
-                                    "active"
-                                );
-
-
-                                if (
-                                    link.getAttribute(
-                                        "href"
-                                    ) ===
-                                    `#${currentId}`
-                                ) {
-
-                                    link.classList.add(
-                                        "active"
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.45
-            }
-        );
-
-
-    sections.forEach(section => {
-
-        sectionObserver.observe(
-            section
-        );
-
+            navigationLinks.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === `#${entry.target.id}`
+                );
+            });
+        });
+    }, {
+        threshold: 0.35
     });
 
+    sections.forEach(section => sectionObserver.observe(section));
 }
 
 
-
 /* =====================================================
-   VIDEO CATEGORY DATA
+   CATEGORY VIDEO DATA
+   Update video paths when your client videos arrive.
 ===================================================== */
 
-/*
-    CHANGE ONLY THE VIDEO FILENAMES HERE.
-
-    Keep the category names and titles.
-
-    Example:
-
-    src: "my-real-video.mp4"
-
-    If your videos are inside a folder called videos:
-
-    src: "videos/my-real-video.mp4"
-*/
-
-
-const videoCategories = {
+const categoryVideos = {
 
     "short-form": {
-
-        title: "SHORT-FORM VIDEOS",
-
-        videos: [
-
-            {
-                title: "HOOK-DRIVEN INSIGHT SHORT",
-                src: "short-hook.mp4"
-            },
-
-            {
-                title: "STORY-ARC SHORT",
-                src: "short-story.mp4"
-            },
-
-            {
-                title: "CONTROVERSIAL SOUNDBITE SHORT",
-                src: "short-soundbite.mp4"
-            },
-
-            {
-                title: "LISTICLE / QUICK-TIP SHORT",
-                src: "short-listicle.mp4"
-            }
-
+        title: "Short-Form Videos",
+        items: [
+            ["Hook-Driven Insight Short", "videos/short-form/hook-driven-insight.mp4"],
+            ["Story-Arc Short", "videos/short-form/story-arc-short.mp4"],
+            ["Controversial Soundbite Short", "videos/short-form/controversial-soundbite.mp4"],
+            ["Listicle / Quick-Tip Short", "videos/short-form/listicle-quick-tip.mp4"]
         ]
-
     },
-
 
     "long-form": {
-
-        title: "LONG-FORM VIDEOS",
-
-        videos: [
-
-            {
-                title: "TALKING-HEAD TUTORIAL / EXPLAINER",
-                src: "long-tutorial.mp4"
-            },
-
-            {
-                title: "PODCAST / INTERVIEW FULL EPISODE EDIT",
-                src: "long-podcast.mp4"
-            },
-
-            {
-                title: "PRODUCT / SAAS WALKTHROUGH",
-                src: "long-product.mp4"
-            }
-
+        title: "Long-Form Videos",
+        items: [
+            ["Talking-Head Tutorial / Explainer", "videos/long-form/talking-head-tutorial.mp4"],
+            ["Podcast / Interview Full Episode Edit", "videos/long-form/podcast-interview.mp4"],
+            ["Product / SaaS Walkthrough", "videos/long-form/product-saas-walkthrough.mp4"]
         ]
-
     },
-
 
     "documentary": {
-
-        title: "DOCUMENTARY EDITS",
-
-        videos: [
-
-            {
-                title: "SHORT DOCUMENTARY-STYLE PROFILE",
-                src: "documentary-profile.mp4"
-            },
-
-            {
-                title: "ISSUE / TOPIC MINI-DOCUMENTARY",
-                src: "documentary-topic.mp4"
-            }
-
+        title: "Documentary Edits",
+        items: [
+            ["Short Documentary-Style Profile", "videos/documentary/short-profile.mp4"],
+            ["Issue / Topic Mini-Documentary", "videos/documentary/mini-documentary.mp4"]
         ]
-
     },
 
-
-    "motion": {
-
-        title: "MOTION GRAPHICS EDITS",
-
-        videos: [
-
-            {
-                title: "EXPLAINER WITH ANIMATED GRAPHICS",
-                src: "motion-explainer.mp4"
-            },
-
-            {
-                title: "LOWER-THIRDS AND TITLE SEQUENCE PACK",
-                src: "motion-titles.mp4"
-            }
-
+    "motion-graphics": {
+        title: "Motion Graphics Edits",
+        items: [
+            ["Explainer with Animated Graphics", "videos/motion-graphics/animated-explainer.mp4"],
+            ["Lower-Thirds and Title Sequence Pack", "videos/motion-graphics/lower-thirds-title-sequence.mp4"]
         ]
-
     },
 
-
-    "color": {
-
-        title: "COLOR GRADING",
-
-        videos: [
-
-            {
-                title: "BEFORE / AFTER FLAT-TO-CINEMATIC GRADE",
-                src: "color-cinematic.mp4"
-            },
-
-            {
-                title: "SKIN-TONE CONSISTENCY REEL",
-                src: "color-skin.mp4"
-            },
-
-            {
-                title: "MOOD-BASED GRADE COMPARISON",
-                src: "color-mood.mp4"
-            }
-
+    "color-grading": {
+        title: "Color Grading",
+        items: [
+            ["Before / After: Flat-to-Cinematic Grade", "videos/color-grading/flat-to-cinematic.mp4"],
+            ["Skin-Tone Consistency Reel", "videos/color-grading/skin-tone-consistency.mp4"],
+            ["Mood-Based Grade Comparison", "videos/color-grading/mood-based-comparison.mp4"]
         ]
-
     },
 
-
-    "sound": {
-
-        title: "SOUND DESIGN",
-
-        videos: [
-
-            {
-                title: "DIALOGUE CLEANUP + MUSIC BED",
-                src: "sound-dialogue.mp4"
-            },
-
-            {
-                title: "SFX-DRIVEN SHORT-FORM EDIT",
-                src: "sound-sfx.mp4"
-            },
-
-            {
-                title: "FULL AMBIENT + MUSIC MIX",
-                src: "sound-ambient.mp4"
-            }
-
+    "sound-design": {
+        title: "Sound Design",
+        items: [
+            ["Dialogue Cleanup + Music Bed", "videos/sound-design/dialogue-cleanup-music.mp4"],
+            ["SFX-Driven Short-Form Edit", "videos/sound-design/sfx-driven-short.mp4"],
+            ["Full Ambient + Music Mix", "videos/sound-design/ambient-music-mix.mp4"]
         ]
-
     },
-
 
     "after-effects": {
-
-        title: "AFTER EFFECTS ANIMATION",
-
-        videos: [
-
-            {
-                title: "KINETIC TYPOGRAPHY",
-                src: "aftereffects-kinetic.mp4"
-            },
-
-            {
-                title: "2D ANIMATION",
-                src: "aftereffects-2d.mp4"
-            }
-
+        title: "After Effects Animation",
+        items: [
+            ["Kinetic Typography", "videos/after-effects/kinetic-typography.mp4"],
+            ["2D Animation", "videos/after-effects/2d-animation.mp4"]
         ]
-
     }
 
 };
 
 
-
 /* =====================================================
-   VIDEO SHOWCASE
+   CATEGORY GALLERY ELEMENTS
 ===================================================== */
 
-const categoryCards =
-    document.querySelectorAll(
-        ".video-category"
-    );
+const projectCards = document.querySelectorAll(
+    ".category-card[data-category]"
+);
+
+const categoryShowcase = document.querySelector("#category-showcase");
+const categoryTitle = document.querySelector("#showcase-title");
+const showcaseGrid = document.querySelector("#showcase-grid");
+const showcaseBack = document.querySelector("#showcase-back");
+
+const projectsGrid = document.querySelector(".category-projects");
 
 
-const videoShowcase =
-    document.getElementById(
-        "videoShowcase"
-    );
+/* STOP VIDEOS WHEN LEAVING A CATEGORY */
+function stopShowcaseVideos() {
 
+    if (!showcaseGrid) return;
 
-const videoGrid =
-    document.getElementById(
-        "videoGrid"
-    );
+    showcaseGrid.querySelectorAll("video").forEach(video => {
 
+        video.pause();
+        video.removeAttribute("src");
 
-const showcaseTitle =
-    document.getElementById(
-        "showcaseTitle"
-    );
+        video.querySelectorAll("source").forEach(source => {
+            source.removeAttribute("src");
+        });
 
+        video.load();
 
-const showcaseClose =
-    document.getElementById(
-        "videoShowcaseClose"
-    );
-
-
-const showcaseBackdrop =
-    document.querySelector(
-        ".video-showcase-backdrop"
-    );
-
-
-
-function openVideoShowcase(categoryKey) {
-
-    if (
-        !videoShowcase ||
-        !videoGrid ||
-        !showcaseTitle
-    ) {
-
-        return;
-
-    }
-
-
-    const category =
-        videoCategories[categoryKey];
-
-
-    if (!category) {
-
-        return;
-
-    }
-
-
-    showcaseTitle.textContent =
-        category.title;
-
-
-    videoGrid.innerHTML = "";
-
-
-    category.videos.forEach(
-        (videoItem, index) => {
-
-            const card =
-                document.createElement(
-                    "article"
-                );
-
-
-            card.className =
-                "showcase-video-card";
-
-
-            card.innerHTML = `
-
-                <div class="showcase-video-number">
-                    ${String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div class="showcase-video-frame">
-
-                    <video
-                        controls
-                        playsinline
-                        preload="metadata"
-                    >
-
-                        <source
-                            src="${videoItem.src}"
-                            type="video/mp4"
-                        >
-
-                        Your browser does not support the video tag.
-
-                    </video>
-
-                </div>
-
-                <h3>
-                    ${videoItem.title}
-                </h3>
-
-            `;
-
-
-            videoGrid.appendChild(card);
-
-        }
-    );
-
-
-    videoShowcase.classList.add(
-        "showcase-open"
-    );
-
-
-    videoShowcase.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    document.body.classList.add(
-        "showcase-lock"
-    );
-
-
-    setTimeout(() => {
-
-        const firstVideo =
-            videoGrid.querySelector(
-                "video"
-            );
-
-        if (firstVideo) {
-
-            firstVideo.focus();
-
-        }
-
-    }, 100);
+    });
 
 }
 
 
+/* OPEN A CATEGORY */
+function openShowcase(categoryKey) {
 
-function closeVideoShowcase() {
-
-    if (!videoShowcase) {
-
+    if (!categoryShowcase || !categoryTitle || !showcaseGrid) {
+        console.error("Category gallery elements were not found in index.html.");
         return;
-
     }
 
+    const category = categoryVideos[categoryKey];
 
-    const videos =
-        videoShowcase.querySelectorAll(
-            "video"
+    if (!category) {
+        console.error("Category not found:", categoryKey);
+        return;
+    }
+
+    stopShowcaseVideos();
+
+    showcaseGrid.replaceChildren();
+
+    categoryTitle.textContent = category.title;
+
+
+    /* CREATE EACH VIDEO CARD */
+    category.items.forEach(([label, source], index) => {
+
+        const card = document.createElement("article");
+        card.className = "showcase-video-card";
+
+
+        /* PROJECT NUMBER */
+        const number = document.createElement("span");
+        number.className = "showcase-video-number";
+
+        number.textContent = String(index + 1).padStart(2, "0");
+
+
+        /* VIDEO FRAME */
+        const frame = document.createElement("div");
+        frame.className = "showcase-video-frame";
+
+
+        /* VIDEO PLAYER */
+        const video = document.createElement("video");
+
+        video.controls = true;
+        video.preload = "metadata";
+        video.playsInline = true;
+
+        video.setAttribute("aria-label", label);
+
+
+        /* VIDEO SOURCE */
+        const videoSource = document.createElement("source");
+
+        videoSource.src = source;
+        videoSource.type = "video/mp4";
+
+        video.appendChild(videoSource);
+
+
+        /* PROJECT TITLE */
+        const title = document.createElement("h4");
+
+        title.textContent = label;
+
+
+        /* VIDEO PATH */
+        const note = document.createElement("p");
+
+        note.className = "video-source-note";
+        note.textContent = source;
+
+
+        /* MISSING VIDEO MESSAGE */
+        const missing = document.createElement("p");
+
+        missing.className = "video-missing";
+
+        missing.textContent =
+            "Add your video at this path, or update the filename in script.js.";
+
+        missing.style.display = "none";
+
+
+        video.addEventListener("error", () => {
+            missing.style.display = "block";
+        });
+
+
+        /* ADD ELEMENTS TO THE CARD */
+        frame.appendChild(video);
+
+        card.append(
+            number,
+            frame,
+            title,
+            note,
+            missing
         );
 
-
-    videos.forEach(video => {
-
-        video.pause();
-
-        video.currentTime = 0;
+        showcaseGrid.appendChild(card);
 
     });
 
 
-    videoShowcase.classList.remove(
-        "showcase-open"
-    );
+    /* SHOW GALLERY */
+    if (projectsGrid) {
+        projectsGrid.hidden = true;
+    }
 
+    categoryShowcase.hidden = false;
 
-    videoShowcase.setAttribute(
-        "aria-hidden",
-        "true"
-    );
+    categoryShowcase.setAttribute("aria-hidden", "false");
 
-
-    document.body.classList.remove(
-        "showcase-lock"
-    );
+    categoryShowcase.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
 }
 
 
+/* CLOSE CATEGORY GALLERY */
+function closeShowcase() {
 
-categoryCards.forEach(card => {
+    if (!categoryShowcase) return;
 
-    card.addEventListener(
-        "click",
-        () => {
+    stopShowcaseVideos();
 
-            const categoryKey =
-                card.dataset.category;
+    categoryShowcase.hidden = true;
+
+    categoryShowcase.setAttribute("aria-hidden", "true");
+
+    if (projectsGrid) {
+        projectsGrid.hidden = false;
+    }
+
+}
 
 
-            openVideoShowcase(
-                categoryKey
-            );
+/* CLICK CATEGORY CARDS */
+projectCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+        openShowcase(card.dataset.category);
+    });
+
+
+    /* KEYBOARD ACCESSIBILITY */
+    card.addEventListener("keydown", event => {
+
+        if (event.key === "Enter" || event.key === " ") {
+
+            event.preventDefault();
+
+            openShowcase(card.dataset.category);
 
         }
-    );
+
+    });
 
 });
 
 
+/* BACK TO ALL CATEGORIES */
+if (showcaseBack) {
 
-if (showcaseClose) {
+    showcaseBack.addEventListener("click", () => {
 
-    showcaseClose.addEventListener(
-        "click",
-        closeVideoShowcase
-    );
+        closeShowcase();
 
-}
-
-
-if (showcaseBackdrop) {
-
-    showcaseBackdrop.addEventListener(
-        "click",
-        closeVideoShowcase
-    );
-
-}
-
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape" &&
-            videoShowcase &&
-            videoShowcase.classList.contains(
-                "showcase-open"
-            )
-        ) {
-
-            closeVideoShowcase();
-
+        if (projectsGrid) {
+            projectsGrid.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
 
-    }
-);
+    });
 
+}
 
 
 /* =====================================================
-   PAGE LOAD
+   SHOWREEL PLAY OVERLAY
 ===================================================== */
 
-window.addEventListener(
-    "load",
-    () => {
+const showreelVideo = document.querySelector(".showreel-image");
 
-        document.body.classList.add(
-            "loaded"
-        );
+const playOverlay = document.querySelector(".play-overlay");
 
-        console.log(
-            "FRAME/ portfolio loaded successfully."
-        );
+if (showreelVideo && playOverlay) {
 
-    }
-);
+    const updateOverlay = () => {
+        playOverlay.style.opacity = showreelVideo.paused ? "1" : "0";
+    };
 
+    showreelVideo.addEventListener("play", updateOverlay);
+
+    showreelVideo.addEventListener("pause", updateOverlay);
+
+    showreelVideo.addEventListener("ended", updateOverlay);
+
+    updateOverlay();
+
+}
 
 
 /* =====================================================
-   HERO SHOWREEL
+   PAGE LOADED
 ===================================================== */
 
-const showreelVideo =
-    document.querySelector(
-        ".showreel-image"
-    );
+window.addEventListener("load", () => {
 
+    document.body.classList.add("loaded");
 
-const showreelFrame =
-    document.querySelector(
-        ".showreel-frame"
-    );
+    console.log("FRAME/ portfolio loaded successfully.");
 
-
-if (
-    showreelVideo &&
-    showreelFrame
-) {
-
-    showreelVideo.addEventListener(
-        "play",
-        () => {
-
-            showreelFrame.classList.add(
-                "playing"
-            );
-
-        }
-    );
-
-
-    showreelVideo.addEventListener(
-        "pause",
-        () => {
-
-            showreelFrame.classList.remove(
-                "playing"
-            );
-
-        }
-    );
-
-
-    showreelVideo.addEventListener(
-        "ended",
-        () => {
-
-            showreelFrame.classList.remove(
-                "playing"
-            );
-
-        }
-    );
-
-}
+});
