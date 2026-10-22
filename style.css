@@ -48,8 +48,6 @@ button {
 
     --blue: #2455ff;
 
-    --white: #ffffff;
-
 }
 
 
@@ -376,10 +374,6 @@ button {
 .hero h1 span {
 
     color: var(--yellow);
-
-    -webkit-text-stroke:
-        2px
-        var(--cream);
 
 }
 
