@@ -574,28 +574,11 @@ button {
 
 }
 
-
 .video-time {
-
-    position: absolute;
-
-    bottom: 10px;
-
-    right: 12px;
-
-    padding: 5px 8px;
-
-    background: var(--black);
-
-    color: white;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
+    display: none;
 }
+
+
 
 
 .hero-bottom {
